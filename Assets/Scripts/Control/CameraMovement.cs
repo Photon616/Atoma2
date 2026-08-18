@@ -41,7 +41,7 @@ public class CameraMovement : MonoBehaviour
 
         transform.position += new Vector3(currentInputVector.x, currentInputVector.y) * CameraSpeed * (cam.orthographicSize / 5.0f) * Time.deltaTime; // 인풋 * 속도 * 줌 배율 * 델타타임
 
-        zoomTarget += zoomInput.y * zoomSpeed * Time.deltaTime;
+        zoomTarget += -zoomInput.y * zoomSpeed * (zoomTarget / 5.0f) * Time.deltaTime;
         
         if (zoomTarget > zoomMax)
         {
