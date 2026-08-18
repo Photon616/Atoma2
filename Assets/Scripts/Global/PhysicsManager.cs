@@ -8,7 +8,8 @@ public class PhysicsManager : MonoBehaviour
 
     [SerializeField] private List<GameObject> atoms = new();
     [SerializeField] private GameObject atomPrefab;
-    [SerializeField] private float maxInteractionRadius = 10f;
+    [SerializeField] private float maxRepelDistance = 2.0f;
+    [SerializeField] private float repelForce = 2.0f;
     private uint idCounter = 0;
 
     private void Awake()
@@ -31,7 +32,7 @@ public class PhysicsManager : MonoBehaviour
                 Vector3 positionB = atomB.transform.position;
 
                 float distance = Vector3.Distance(positionA, positionB);
-                if (distance >= maxInteractionRadius)
+                if (distance >= maxRepelDistance)
                 {
                     continue;
                 }
@@ -40,10 +41,10 @@ public class PhysicsManager : MonoBehaviour
                 dir.z = 0; // z축으로는 움직이면 안 되니까
                 dir.Normalize(); // 방향이니까 정규화
 
-                float force = GetForceByDistance(distance);
-                managerA.velocity += (Vector2)dir * force;
-                managerB.velocity -= (Vector2)dir * force;
-                Debug.Log($"{dir}, {force}, {distance}");
+                float force = GetRepelForceByDistance(distance) * repelForce;
+                managerA.velocity += (Vector2)dir * force * Time.deltaTime;
+                managerB.velocity -= (Vector2)dir * force * Time.deltaTime;
+                // Debug.Log($"{dir}, {force}, {distance}");
             }
         }
     }
@@ -57,11 +58,13 @@ public class PhysicsManager : MonoBehaviour
         idCounter++;
     }
 
-    private float GetForceByDistance(float d)
+    private float GetRepelForceByDistance(float d)
     {
-        float epsilon = 2.0f;
-        float s = 1;
+        return maxRepelDistance * Mathf.Pow(Mathf.Max(0, maxRepelDistance - d), 2);
 
-        return Mathf.Min(4f * epsilon * (Mathf.Pow(s / d, 12f) - Mathf.Pow(s / d, 6f)), epsilon);
+        // float epsilon = 2.0f;
+        // float s = 1;
+
+        // return Mathf.Min(4f * epsilon * (Mathf.Pow(s / d, 12f) - Mathf.Pow(s / d, 6f)), epsilon);
     }
 }
