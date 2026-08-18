@@ -52,7 +52,7 @@ public class CameraMovement : MonoBehaviour
             zoomTarget = zoomMin;
         }
 
-        cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, zoomTarget, zoomLerpFactor * Time.deltaTime);
+        cam.orthographicSize = zoomTarget;//Mathf.Lerp(cam.orthographicSize, zoomTarget, zoomLerpFactor * Time.deltaTime);
         // Debug.Log();
     }
 }
