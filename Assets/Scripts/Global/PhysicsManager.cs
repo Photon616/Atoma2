@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PhysicsManager : MonoBehaviour
 {
-    private static PhysicsManager instance = null;
+    public static PhysicsManager Instance{ get; private set; }
 
     [SerializeField] private List<GameObject> atoms = new();
     [SerializeField] private GameObject atomPrefab;
@@ -14,7 +14,7 @@ public class PhysicsManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
     private void Update()
@@ -42,8 +42,8 @@ public class PhysicsManager : MonoBehaviour
                 dir.Normalize(); // 방향이니까 정규화
 
                 float force = GetRepelForceByDistance(distance) * repelForce;
-                managerA.velocity += (Vector2)dir * force * Time.deltaTime;
-                managerB.velocity -= (Vector2)dir * force * Time.deltaTime;
+                managerA.velocity += force * Time.deltaTime * (Vector2)dir;
+                managerB.velocity -= force * Time.deltaTime * (Vector2)dir;
                 // Debug.Log($"{dir}, {force}, {distance}");
             }
         }
