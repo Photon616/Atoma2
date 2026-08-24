@@ -11,7 +11,7 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private float zoomMax = 20.0f;
     [SerializeField] private float zoomDefault = 5.0f;
     [SerializeField] private float zoomSpeed = 1.0f;
-    [SerializeField] private float zoomLerpFactor = 0.5f;
+    // [SerializeField] private float zoomLerpFactor = 0.5f;
     private PlayerInput playerInput;
     private InputAction moveAction;
     private InputAction zoomAction;
@@ -22,11 +22,11 @@ public class CameraMovement : MonoBehaviour
     private void Awake()
     {
         zoomTarget = zoomDefault;
+        playerInput = GetComponent<PlayerInput>();
     }
 
     private void Start()
     {
-        playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions["Move"];
         zoomAction = playerInput.actions["Zoom"];
     }

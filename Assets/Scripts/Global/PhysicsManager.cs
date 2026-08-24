@@ -58,6 +58,11 @@ public class PhysicsManager : MonoBehaviour
         idCounter++;
     }
 
+    public void AddBond(uint id1, uint id2)
+    {
+        
+    }
+
     private float GetRepelForceByDistance(float d)
     {
         return maxRepelDistance * Mathf.Pow(Mathf.Max(0, maxRepelDistance - d), 2);
