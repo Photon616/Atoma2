@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -58,6 +59,8 @@ public class PhysicsManager : MonoBehaviour
         AtomManager tmpManager = tmpObj.GetComponent<AtomManager>();
         tmpManager.SetID(idCounter);
 
+        atoms.Add(tmpObj);
+
         idCounter++;
     }
 
@@ -67,11 +70,18 @@ public class PhysicsManager : MonoBehaviour
         ulong key = PackIDs(id1, id2);
         bonds.Add(key, bond);
     }
+    
+    public void DeleteAtom(uint id)
+    {
+        GameObject tmp = atoms.Find(x => x.GetComponent<AtomManager>().GetID() == id);
+        atoms.Remove(tmp);
+        tmp.GetComponent<AtomManager>().DestroySelf();
+    }
 
     private ulong PackIDs(uint id1, uint id2)
     {
         uint a, b;
-        if (id1 < id2)
+        if (id1 < id2) // 작은 쪽이 왼쪽으로
         {
             a = id1;
             b = id2;

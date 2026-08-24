@@ -14,7 +14,7 @@ public class AtomManager : MonoBehaviour
         if (!isBeingDragged)
         {
             transform.position += new Vector3(velocity.x, velocity.y) * Time.deltaTime;
-            Debug.Log(gameObject);
+            // Debug.Log(gameObject);
         }
         else
         {
@@ -46,5 +46,10 @@ public class AtomManager : MonoBehaviour
     public void EndDrag()
     {
         isBeingDragged = false;
+    }
+
+    public void DestroySelf()
+    {
+        Destroy(gameObject);
     }
 }

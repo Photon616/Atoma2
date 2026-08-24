@@ -46,7 +46,7 @@ public class MouseControlManager : MonoBehaviour
                 case ToolStateManager.Tool.select:
                     if (pointingObject.TryGetComponent(out AtomManager c))
                     {
-                        Debug.Log("a");
+                        // Debug.Log("a");
                         selectedObject = pointingObject;
                         selectedObject.GetComponent<AtomManager>().StartDrag();
                         isDragging = true;
@@ -59,7 +59,7 @@ public class MouseControlManager : MonoBehaviour
                     break;
                 
                 case ToolStateManager.Tool.place:
-                    PhysicsManager.Instance.AddAtom(mousePosition);
+                    PhysicsManager.Instance.AddAtom((Vector2)mousePosition);
                     break;
                 
                 case ToolStateManager.Tool.bond:
@@ -73,12 +73,20 @@ public class MouseControlManager : MonoBehaviour
                         {
                             AtomManager selectedManager = selectedObject.GetComponent<AtomManager>(); // 결합하기
                             PhysicsManager.Instance.AddBond(selectedManager.GetID(), component.GetID());
+                            selectedObject = null;
                         }
+                    }
+                    break;
+
+                case ToolStateManager.Tool.delete:
+                    if (pointingObject.TryGetComponent<AtomManager>(out AtomManager howBigIsThisScope))
+                    {
+                        PhysicsManager.Instance.DeleteAtom(howBigIsThisScope.GetID());
                     }
                     break;
             }
         }
-        if (clickAction.WasReleasedThisFrame())
+        if (clickAction.WasReleasedThisFrame() && isDragging)
         {
             isDragging = false;
             selectedObject.GetComponent<AtomManager>().EndDrag();

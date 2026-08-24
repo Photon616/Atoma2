@@ -612,7 +612,7 @@ MonoBehaviour:
   id: 0
   drag: 3
   stopThreshold: 0.01
-  velocity: {x: 1, y: 0}
+  velocity: {x: 0, y: 0}
 --- !u!135 &393957575
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1000,7 +1000,8 @@ MonoBehaviour:
   atoms:
   - {fileID: 393957571}
   - {fileID: 100367838}
-  atomPrefab: {fileID: 0}
+  atomPrefab: {fileID: 393957571}
+  bondPrefab: {fileID: 0}
   maxRepelDistance: 5
   repelForce: 2
 --- !u!4 &2118213046
