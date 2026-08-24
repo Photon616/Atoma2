@@ -5,9 +5,12 @@ using UnityEngine;
 public class PhysicsManager : MonoBehaviour
 {
     public static PhysicsManager Instance{ get; private set; }
+    public static float timeScale = 1.0f;
 
     [SerializeField] private List<GameObject> atoms = new();
+    [SerializeField] private Dictionary<ulong, GameObject> bonds = new();
     [SerializeField] private GameObject atomPrefab;
+    [SerializeField] private GameObject bondPrefab;
     [SerializeField] private float maxRepelDistance = 2.0f;
     [SerializeField] private float repelForce = 2.0f;
     private uint idCounter = 0;
@@ -41,7 +44,7 @@ public class PhysicsManager : MonoBehaviour
                 dir.z = 0; // z축으로는 움직이면 안 되니까
                 dir.Normalize(); // 방향이니까 정규화
 
-                float force = GetRepelForceByDistance(distance) * repelForce;
+                float force = (GetRepelForceByDistance(distance) * repelForce) + 0;
                 managerA.velocity += force * Time.deltaTime * (Vector2)dir;
                 managerB.velocity -= force * Time.deltaTime * (Vector2)dir;
                 // Debug.Log($"{dir}, {force}, {distance}");
@@ -60,7 +63,25 @@ public class PhysicsManager : MonoBehaviour
 
     public void AddBond(uint id1, uint id2)
     {
-        
+        GameObject bond = Instantiate(bondPrefab);
+        ulong key = PackIDs(id1, id2);
+        bonds.Add(key, bond);
+    }
+
+    private ulong PackIDs(uint id1, uint id2)
+    {
+        uint a, b;
+        if (id1 < id2)
+        {
+            a = id1;
+            b = id2;
+        }
+        else
+        {
+            a = id2;
+            b = id1;
+        }
+        return ((ulong)a << 32) | b;
     }
 
     private float GetRepelForceByDistance(float d)
