@@ -69,11 +69,12 @@ public class MouseControlManager : MonoBehaviour
                         {
                             selectedObject = pointingObject; // 선택하기
                         }
-                        else // 이미 선택된 게 있으면
+                        else if (selectedObject != pointingObject) // 이미 선택된 게 있고 선택된 거랑 다른 원자면
                         {
                             AtomManager selectedManager = selectedObject.GetComponent<AtomManager>(); // 결합하기
                             PhysicsManager.Instance.AddBond(selectedManager.GetID(), component.GetID());
                             selectedObject = null;
+                            Debug.Log("bonded");
                         }
                     }
                     break;

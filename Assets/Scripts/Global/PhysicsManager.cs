@@ -14,6 +14,9 @@ public class PhysicsManager : MonoBehaviour
     [SerializeField] private GameObject bondPrefab;
     [SerializeField] private float maxRepelDistance = 2.0f;
     [SerializeField] private float repelForce = 2.0f;
+    [SerializeField] private float minAttractDistance = 1.5f;
+    [SerializeField] private float attractForceEaseRange = 2.0f;
+    [SerializeField] private float attractForce = 2.0f;
     private uint idCounter = 0;
 
     private void Awake()
@@ -36,16 +39,29 @@ public class PhysicsManager : MonoBehaviour
                 Vector3 positionB = atomB.transform.position;
 
                 float distance = Vector3.Distance(positionA, positionB);
-                if (distance >= maxRepelDistance)
-                {
-                    continue;
-                }
 
                 Vector3 dir = positionA - positionB; // B 기준 A의 방향(선대 응용)
                 dir.z = 0; // z축으로는 움직이면 안 되니까
                 dir.Normalize(); // 방향이니까 정규화
 
-                float force = (GetRepelForceByDistance(distance) * repelForce) + 0;
+                float force = 0;
+                
+                if (distance <= maxRepelDistance)
+                {
+                    force += GetRepelForceByDistance(distance) * repelForce;
+                }
+                
+                if (distance >= minAttractDistance)
+                {
+                    ulong key = PackIDs(managerA.GetID(), managerB.GetID());
+                    bool doesBondExist = bonds.ContainsKey(key);
+                    if (doesBondExist)
+                    {
+                        force -= GetAttractForceByDistance(distance) * attractForce;
+                        bonds[key].GetComponent<BondManager>().UpdatePosition(atomA.transform.position, atomB.transform.position);
+                    }
+                }
+
                 managerA.velocity += force * Time.deltaTime * (Vector2)dir;
                 managerB.velocity -= force * Time.deltaTime * (Vector2)dir;
                 // Debug.Log($"{dir}, {force}, {distance}");
@@ -67,8 +83,12 @@ public class PhysicsManager : MonoBehaviour
     public void AddBond(uint id1, uint id2)
     {
         GameObject bond = Instantiate(bondPrefab);
+        BondManager tmpManager = bond.GetComponent<BondManager>();
+
         ulong key = PackIDs(id1, id2);
         bonds.Add(key, bond);
+
+        tmpManager.SetID(key);
     }
     
     public void DeleteAtom(uint id)
@@ -102,5 +122,10 @@ public class PhysicsManager : MonoBehaviour
         // float s = 1;
 
         // return Mathf.Min(4f * epsilon * (Mathf.Pow(s / d, 12f) - Mathf.Pow(s / d, 6f)), epsilon);
+    }
+
+    private float GetAttractForceByDistance(float d)
+    {
+        return Mathf.Pow((d - minAttractDistance) / 2, 2);
     }
 }
