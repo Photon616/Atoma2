@@ -74,7 +74,7 @@ public class MouseControlManager : MonoBehaviour
                             AtomManager selectedManager = selectedObject.GetComponent<AtomManager>(); // 결합하기
                             PhysicsManager.Instance.AddBond(selectedManager.GetID(), component.GetID());
                             selectedObject = null;
-                            // Debug.Log("bonded");
+                            Debug.Log("bonded");
                         }
                     }
                     break;

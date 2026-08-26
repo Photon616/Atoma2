@@ -31,4 +31,9 @@ public class BondManager : MonoBehaviour
 
         // Debug.Log("updated bond position");
     }
+    
+    public void DestroySelf()
+    {
+        Destroy(gameObject);
+    }
 }

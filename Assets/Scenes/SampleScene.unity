@@ -1069,7 +1069,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PhysicsManager
   atoms:
   - {fileID: 393957571}
-  - {fileID: 0}
   atomPrefab: {fileID: 393957571}
   bondPrefab: {fileID: 1426615926}
   maxRepelDistance: 5

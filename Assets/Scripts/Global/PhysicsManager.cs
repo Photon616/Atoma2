@@ -93,9 +93,24 @@ public class PhysicsManager : MonoBehaviour
     
     public void DeleteAtom(uint id)
     {
-        GameObject tmp = atoms.Find(x => x.GetComponent<AtomManager>().GetID() == id);
-        atoms.Remove(tmp);
-        tmp.GetComponent<AtomManager>().DestroySelf();
+        GameObject atom = atoms.Find(x => x.GetComponent<AtomManager>().GetID() == id);
+        atoms.Remove(atom);
+
+        // 이 원자의 모든 결합 삭제
+        AtomManager tmpManager = atom.GetComponent<AtomManager>();
+        for (int i = 0; i < atoms.Count(); i++)
+        {
+            AtomManager iManager = atoms[i].GetComponent<AtomManager>();
+            ulong bondID = PackIDs(tmpManager.GetID(), iManager.GetID());
+            if (bonds.ContainsKey(bondID))
+            {
+                GameObject bond = bonds[bondID];
+                bonds.Remove(bondID);
+                bond.GetComponent<BondManager>().DestroySelf();
+            }
+        }
+
+        tmpManager.DestroySelf();
     }
 
     private ulong PackIDs(uint id1, uint id2)
