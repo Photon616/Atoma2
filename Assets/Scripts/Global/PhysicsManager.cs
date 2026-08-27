@@ -113,6 +113,13 @@ public class PhysicsManager : MonoBehaviour
         tmpManager.DestroySelf();
     }
 
+    public void DeleteBond(ulong id)
+    {
+        GameObject bond = bonds[id];
+        bonds.Remove(id);
+        bond.GetComponent<BondManager>().DestroySelf();
+    }
+
     private ulong PackIDs(uint id1, uint id2)
     {
         uint a, b;

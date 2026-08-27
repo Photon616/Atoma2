@@ -74,7 +74,7 @@ public class MouseControlManager : MonoBehaviour
                             AtomManager selectedManager = selectedObject.GetComponent<AtomManager>(); // 결합하기
                             PhysicsManager.Instance.AddBond(selectedManager.GetID(), component.GetID());
                             selectedObject = null;
-                            Debug.Log("bonded");
+                            // Debug.Log("bonded");
                         }
                     }
                     break;
@@ -83,6 +83,13 @@ public class MouseControlManager : MonoBehaviour
                     if (pointingObject.TryGetComponent<AtomManager>(out AtomManager howBigIsThisScope))
                     {
                         PhysicsManager.Instance.DeleteAtom(howBigIsThisScope.GetID());
+                    }
+                    break;
+                
+                case ToolStateManager.Tool.cut:
+                    if (pointingObject.TryGetComponent<BondManager>(out BondManager component1))
+                    {
+                        PhysicsManager.Instance.DeleteBond(component1.GetID());
                     }
                     break;
             }

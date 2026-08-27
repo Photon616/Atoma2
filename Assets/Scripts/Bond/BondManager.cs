@@ -1,8 +1,10 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class BondManager : MonoBehaviour
 {
     [SerializeField] private ulong id;
+    [SerializeField] private float width;
     private LineRenderer lr;
 
     private void Awake()
@@ -28,6 +30,8 @@ public class BondManager : MonoBehaviour
         lr.SetPosition(1, p2);
 
         transform.position = (p1 + p2) / 2;
+        transform.localScale = new Vector3(width, Vector3.Distance(p1, p2), width);
+        transform.rotation = Quaternion.Euler(0, 0, -Mathf.Atan2(p1.x - p2.x, p1.y - p2.y) * Mathf.Rad2Deg);
 
         // Debug.Log("updated bond position");
     }
