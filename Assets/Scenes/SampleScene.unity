@@ -555,7 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6d5c1dd1ff208b47933e224ea941ba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolStateManager
-  currentTool: 0
+  currentTool: 1
 --- !u!4 &401915646
 Transform:
   m_ObjectHideFlags: 0
@@ -892,6 +892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BondManager
   id: 0
+  width: 0.5
 --- !u!65 &1426615928
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1075,7 +1076,7 @@ MonoBehaviour:
   repelForce: 2
   minAttractDistance: 1.5
   attractForceEaseRange: 2
-  attractForce: 4
+  attractForce: 32
 --- !u!4 &2118213046
 Transform:
   m_ObjectHideFlags: 0
