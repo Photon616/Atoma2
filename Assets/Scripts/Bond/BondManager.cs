@@ -6,6 +6,7 @@ public class BondManager : MonoBehaviour
     [SerializeField] private ulong id;
     [SerializeField] private float width;
     private LineRenderer lr;
+    public int order;
 
     private void Awake()
     {

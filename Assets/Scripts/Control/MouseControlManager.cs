@@ -100,6 +100,11 @@ public class MouseControlManager : MonoBehaviour
             selectedObject.GetComponent<AtomManager>().EndDrag();
         }
 
+        if (rightCLickAction.WasPressedThisFrame()) // 우클릭하면 취소
+        {
+            ToolStateManager.Instance.currentTool = ToolStateManager.Tool.select;
+        }
+
         if (isDragging)
         {
             selectedObject.transform.position = new Vector3
