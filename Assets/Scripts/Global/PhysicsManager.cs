@@ -62,8 +62,8 @@ public class PhysicsManager : MonoBehaviour
                     }
                 }
 
-                managerA.velocity += force * Time.deltaTime * (Vector2)dir;
-                managerB.velocity -= force * Time.deltaTime * (Vector2)dir;
+                managerA.velocity += force * timeScale * Time.deltaTime * (Vector2)dir;
+                managerB.velocity -= force * timeScale * Time.deltaTime * (Vector2)dir;
                 // Debug.Log($"{dir}, {force}, {distance}");
             }
         }

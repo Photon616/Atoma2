@@ -1072,8 +1072,8 @@ MonoBehaviour:
   - {fileID: 393957571}
   atomPrefab: {fileID: 393957571}
   bondPrefab: {fileID: 1426615926}
-  maxRepelDistance: 5
-  repelForce: 2
+  maxRepelDistance: 3
+  repelForce: 16
   minAttractDistance: 1.5
   attractForceEaseRange: 2
   attractForce: 32

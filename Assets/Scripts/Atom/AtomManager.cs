@@ -13,7 +13,7 @@ public class AtomManager : MonoBehaviour
     {
         if (!isBeingDragged)
         {
-            transform.position += new Vector3(velocity.x, velocity.y) * Time.deltaTime;
+            transform.position += new Vector3(velocity.x, velocity.y) * PhysicsManager.timeScale * Time.deltaTime;
             // Debug.Log(gameObject);
         }
         else
@@ -21,7 +21,7 @@ public class AtomManager : MonoBehaviour
             velocity = Vector2.zero;
         }
         
-        velocity *= 1 - (drag * Time.deltaTime);
+        velocity *= 1 - (drag * PhysicsManager.timeScale * Time.deltaTime);
         if (velocity.magnitude <= stopThreshold)
         {
             velocity = Vector2.zero;
