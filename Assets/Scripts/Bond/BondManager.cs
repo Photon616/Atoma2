@@ -5,12 +5,14 @@ public class BondManager : MonoBehaviour
 {
     [SerializeField] private ulong id;
     [SerializeField] private float width;
-    private LineRenderer lr;
-    public int order;
+    private BondOrderVisual bondOrderVisual;
+    // private LineRenderer lr;
+    public int order = 1;
 
     private void Awake()
     {
-        lr = GetComponent<LineRenderer>();
+        // lr = GetComponent<LineRenderer>();
+        bondOrderVisual = GetComponent<BondOrderVisual>();
     }
 
     public ulong GetID()
@@ -27,8 +29,8 @@ public class BondManager : MonoBehaviour
     {
         p1.z = transform.position.z;
         p2.z = transform.position.z;
-        lr.SetPosition(0, p1);
-        lr.SetPosition(1, p2);
+        // lr.SetPosition(0, p1);
+        // lr.SetPosition(1, p2);
 
         transform.position = (p1 + p2) / 2;
         transform.localScale = new Vector3(width, Vector3.Distance(p1, p2), width);
@@ -37,6 +39,28 @@ public class BondManager : MonoBehaviour
         // Debug.Log("updated bond position");
     }
     
+    public void PlusOrder()
+    {
+        if (order < 4)
+        {
+            order++;
+            bondOrderVisual.UpdateVisual(order);
+        }
+    }
+
+    public void MinusOrder()
+    {
+        if (order > 1)
+        {
+            order--;
+            bondOrderVisual.UpdateVisual(order);
+        }
+        else
+        {
+            DestroySelf();
+        }
+    }
+
     public void DestroySelf()
     {
         Destroy(gameObject);

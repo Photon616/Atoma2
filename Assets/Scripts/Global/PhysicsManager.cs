@@ -82,13 +82,22 @@ public class PhysicsManager : MonoBehaviour
 
     public void AddBond(uint id1, uint id2)
     {
-        GameObject bond = Instantiate(bondPrefab);
-        BondManager tmpManager = bond.GetComponent<BondManager>();
-
         ulong key = PackIDs(id1, id2);
-        bonds.Add(key, bond);
 
-        tmpManager.SetID(key);
+        if (!bonds.ContainsKey(key)) // 그 key값의 결합이 없으면 새 결합 오브젝트를 만들고
+        {
+            GameObject bond = Instantiate(bondPrefab);
+            BondManager tmpManager = bond.GetComponent<BondManager>();
+
+            bonds.Add(key, bond);
+
+            tmpManager.SetID(key);
+        }
+        else // 있으면 그 결합 오브젝트를 수정
+        {
+            bonds[key].GetComponent<BondManager>().PlusOrder();
+        }
+
     }
     
     public void DeleteAtom(uint id)
@@ -116,8 +125,14 @@ public class PhysicsManager : MonoBehaviour
     public void DeleteBond(ulong id)
     {
         GameObject bond = bonds[id];
-        bonds.Remove(id);
-        bond.GetComponent<BondManager>().DestroySelf();
+        BondManager manager = bond.GetComponent<BondManager>();
+
+        if (manager.order == 1)
+        {
+            bonds.Remove(id);
+        }
+        
+        bond.GetComponent<BondManager>().MinusOrder();
     }
 
     private ulong PackIDs(uint id1, uint id2)
