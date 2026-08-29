@@ -38,57 +38,86 @@ public class MouseControlManager : MonoBehaviour
             pointingObject = hit.collider.gameObject;
         }
         // Debug.Log(pointingObject);
-
+        
         if (clickAction.WasPressedThisFrame())
         {
+            Debug.Log("Left click");
+
             switch (ToolStateManager.Instance.currentTool)
             {
                 case ToolStateManager.Tool.select:
+                    Debug.Log("select tool");
+
                     if (pointingObject.TryGetComponent(out AtomManager c))
                     {
-                        // Debug.Log("a");
+                        Debug.Log($"Atom click, id: {c.GetID()}");
+
+                        Deselect();
                         selectedObject = pointingObject;
+                        // selectedObject.GetComponent<AtomManager>().Selected();
+
                         selectedObject.GetComponent<AtomManager>().StartDrag();
                         isDragging = true;
                         offsetFromPointer = selectedObject.transform.position - mousePosition;
                     }
                     else
                     {
-                        selectedObject = null;
+                        Debug.Log($"Clicked {pointingObject} (NOT an atom)");
+                        Deselect();
                     }
                     break;
                 
                 case ToolStateManager.Tool.place:
+                    Debug.Log("place tool");
+
                     PhysicsManager.Instance.AddAtom((Vector2)mousePosition);
                     break;
                 
                 case ToolStateManager.Tool.bond:
+                    Debug.Log("bonding tool");
+
                     if (pointingObject.TryGetComponent<AtomManager>(out AtomManager component)) // 원자를 클릭했는데
                     {
+                        Debug.Log($"Atom click, id: {component.GetID()}");
+
                         if (selectedObject == null) // 선택된 게 없으면
                         {
+                            Debug.Log("First click");
                             selectedObject = pointingObject; // 선택하기
+                            // selectedObject.GetComponent<AtomManager>().Selected();
                         }
                         else if (selectedObject != pointingObject) // 이미 선택된 게 있고 선택된 거랑 다른 원자면
                         {
+                            Debug.Log("Second click");
                             AtomManager selectedManager = selectedObject.GetComponent<AtomManager>(); // 결합하기
                             PhysicsManager.Instance.AddBond(selectedManager.GetID(), component.GetID());
-                            selectedObject = null;
+                            Deselect();
                             // Debug.Log("bonded");
                         }
+                    }
+                    else
+                    {
+                        Debug.Log($"Clicked {pointingObject} (NOT an atom)");
+                        Deselect();
                     }
                     break;
 
                 case ToolStateManager.Tool.delete:
+                    Debug.Log("Delete tool");
+
                     if (pointingObject.TryGetComponent<AtomManager>(out AtomManager howBigIsThisScope))
                     {
+                        Debug.Log($"Atom click, id: {howBigIsThisScope.GetID()}");
                         PhysicsManager.Instance.DeleteAtom(howBigIsThisScope.GetID());
                     }
                     break;
                 
                 case ToolStateManager.Tool.cut:
+                    Debug.Log("Cut tool");
+
                     if (pointingObject.TryGetComponent<BondManager>(out BondManager component1))
                     {
+                        Debug.Log($"Bond click, id: {component1.GetID()}");
                         PhysicsManager.Instance.DeleteBond(component1.GetID());
                     }
                     break;
@@ -103,6 +132,10 @@ public class MouseControlManager : MonoBehaviour
         if (rightCLickAction.WasPressedThisFrame()) // 우클릭하면 취소
         {
             ToolStateManager.Instance.currentTool = ToolStateManager.Tool.select;
+            if (selectedObject != null && selectedObject.TryGetComponent<AtomManager>(out AtomManager component))
+            {
+                component.Deselected();
+            }
         }
 
         if (isDragging)
@@ -115,5 +148,19 @@ public class MouseControlManager : MonoBehaviour
             );
             // Debug.Log($"{offsetFromPointer} {mousePosition}");
         }
+
+        if (selectedObject != null)
+        {
+            selectedObject.GetComponent<AtomManager>().Selected();
+        }
+    }
+
+    private void Deselect()
+    {
+        if (selectedObject != null)
+        {
+            selectedObject.GetComponent<AtomManager>().Deselected();
+        }
+        selectedObject = null;
     }
 }

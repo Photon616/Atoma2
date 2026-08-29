@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class AtomManager : MonoBehaviour
 {
+    [SerializeField] GameObject marker;
     [SerializeField] private uint id;
     [SerializeField] private float drag = 1.0f;
     [SerializeField] private float stopThreshold = 0.01f;
@@ -46,6 +47,16 @@ public class AtomManager : MonoBehaviour
     public void EndDrag()
     {
         isBeingDragged = false;
+    }
+
+    public void Selected()
+    {
+        marker.SetActive(true);
+    }
+
+    public void Deselected()
+    {
+        marker.SetActive(false);
     }
 
     public void DestroySelf()
