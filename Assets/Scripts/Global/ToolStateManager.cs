@@ -13,22 +13,21 @@ public class ToolStateManager : MonoBehaviour
         cut
     }
 
-    public Tool currentTool = Tool.select;
+    private Tool currentTool = Tool.select;
 
     void Awake()
     {
         Instance = this;
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void SetCurrentTool(Tool tool)
     {
-        
+        Debug.Log($"Switching tool to {tool}");
+        currentTool = tool;
     }
 
-    // Update is called once per frame
-    void Update()
+    public Tool GetCurrentTool()
     {
-        
+        return currentTool;
     }
 }

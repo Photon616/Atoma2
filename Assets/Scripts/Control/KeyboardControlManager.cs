@@ -8,6 +8,8 @@ public class KeyboardControlManager : MonoBehaviour
     private InputAction bondAction;
     private InputAction deleteAction;
     private InputAction cutAction;
+    private InputAction escapeAction;
+    private InputAction pauseAction;
 
     private void Awake()
     {
@@ -21,6 +23,8 @@ public class KeyboardControlManager : MonoBehaviour
         bondAction = playerInput.actions["Bond"];
         deleteAction = playerInput.actions["Delete"];
         cutAction = playerInput.actions["Cut"];
+        escapeAction = playerInput.actions["Escape"];
+        pauseAction = playerInput.actions["Pause"];
     }
 
     // Update is called once per frame
@@ -28,19 +32,28 @@ public class KeyboardControlManager : MonoBehaviour
     {
         if (placeAction.WasPressedThisFrame())
         {
-            ToolStateManager.Instance.currentTool = ToolStateManager.Tool.place;
+            ToolStateManager.Instance.SetCurrentTool(ToolStateManager.Tool.place);
         }
         if (bondAction.WasPressedThisFrame())
         {
-            ToolStateManager.Instance.currentTool = ToolStateManager.Tool.bond;
+            ToolStateManager.Instance.SetCurrentTool(ToolStateManager.Tool.bond);
         }
         if (deleteAction.WasPressedThisFrame())
         {
-            ToolStateManager.Instance.currentTool = ToolStateManager.Tool.delete;
+            ToolStateManager.Instance.SetCurrentTool(ToolStateManager.Tool.delete);
         }
         if (cutAction.WasPressedThisFrame())
         {
-            ToolStateManager.Instance.currentTool = ToolStateManager.Tool.cut;
+            ToolStateManager.Instance.SetCurrentTool(ToolStateManager.Tool.cut);
+        }
+        if (escapeAction.WasPressedThisFrame())
+        {
+            PauseMenu.Instance.Toggle();
+            PhysicsManager.Instance.ToggleSimulationSpeed();
+        }
+        if (pauseAction.WasPressedThisFrame())
+        {
+            PhysicsManager.Instance.ToggleSimulationSpeed();
         }
     }
 }

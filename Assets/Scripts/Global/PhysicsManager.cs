@@ -18,6 +18,7 @@ public class PhysicsManager : MonoBehaviour
     [SerializeField] private float attractForceEaseRange = 2.0f;
     [SerializeField] private float attractForce = 2.0f;
     private uint idCounter = 0;
+    private bool isPaused = false;
 
     private void Awake()
     {
@@ -61,9 +62,10 @@ public class PhysicsManager : MonoBehaviour
                         bonds[key].GetComponent<BondManager>().UpdatePosition(atomA.transform.position, atomB.transform.position);
                     }
                 }
-
-                managerA.velocity += force * timeScale * Time.deltaTime * (Vector2)dir;
-                managerB.velocity -= force * timeScale * Time.deltaTime * (Vector2)dir;
+                
+                Vector2 forceApplied = force * timeScale * Time.deltaTime * (Vector2)dir;
+                managerA.velocity += forceApplied;
+                managerB.velocity -= forceApplied;
                 // Debug.Log($"{dir}, {force}, {distance}");
             }
         }
@@ -133,6 +135,29 @@ public class PhysicsManager : MonoBehaviour
         }
         
         bond.GetComponent<BondManager>().MinusOrder();
+    }
+    public void ToggleSimulationSpeed()
+    {
+        if (isPaused)
+        {
+            ResumeSimulation();
+        }
+        else
+        {
+            PauseSimulation();
+        }
+    }
+
+    public void PauseSimulation()
+    {
+        timeScale = 0f;
+        isPaused = true;
+    }
+
+    public void ResumeSimulation()
+    {
+        timeScale = 1f;
+        isPaused = false;
     }
 
     private ulong PackIDs(uint id1, uint id2)

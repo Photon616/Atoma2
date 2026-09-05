@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 
 public class MouseControlManager : MonoBehaviour
 {
+    public static MouseControlManager Instance{ get; private set; }
+
     private PlayerInput playerInput;
     private InputAction pointAction;
     private InputAction clickAction;
@@ -16,6 +18,7 @@ public class MouseControlManager : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
         playerInput = GetComponent<PlayerInput>();
         cam = GetComponent<Camera>();
     }
@@ -39,11 +42,11 @@ public class MouseControlManager : MonoBehaviour
         }
         // Debug.Log(pointingObject);
         
-        if (clickAction.WasPressedThisFrame())
+        if (clickAction.WasPressedThisFrame() && PauseMenu.isPaused == false)
         {
             Debug.Log("Left click");
 
-            switch (ToolStateManager.Instance.currentTool)
+            switch (ToolStateManager.Instance.GetCurrentTool())
             {
                 case ToolStateManager.Tool.select:
                     Debug.Log("select tool");
@@ -131,8 +134,8 @@ public class MouseControlManager : MonoBehaviour
 
         if (rightCLickAction.WasPressedThisFrame()) // 우클릭하면 취소
         {
-            ToolStateManager.Instance.currentTool = ToolStateManager.Tool.select;
-            if (selectedObject != null && selectedObject.TryGetComponent<AtomManager>(out AtomManager component))
+            ToolStateManager.Instance.SetCurrentTool(ToolStateManager.Tool.select);
+            if (selectedObject != null && selectedObject.TryGetComponent<AtomManager>(out AtomManager component)) // 원자가 선택되어 있다면
             {
                 component.Deselected();
             }
