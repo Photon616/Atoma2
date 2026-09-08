@@ -5,7 +5,8 @@ public class PauseMenu : MonoBehaviour
     public static PauseMenu Instance{ get; private set; }
     public static bool isPaused = false;
 
-    [SerializeField] GameObject pauseMenuObject;
+    [SerializeField] GameObject backgroundObject;
+    [SerializeField] GameObject menuObject;
 
     private void Awake()
     {
@@ -14,7 +15,8 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
-        pauseMenuObject.SetActive(false);
+        menuObject.SetActive(false);
+        backgroundObject.SetActive(false);
     }
 
     public void Toggle()
@@ -31,13 +33,26 @@ public class PauseMenu : MonoBehaviour
 
     public void ShowPauseMenu()
     {
-        pauseMenuObject.SetActive(true);
+        backgroundObject.SetActive(true);
+        menuObject.SetActive(true);
         isPaused = true;
     }
 
     public void HidePauseMenu()
     {
-        pauseMenuObject.SetActive(false);
+        menuObject.SetActive(false);
+        backgroundObject.SetActive(false);
         isPaused = false;
+    }
+
+    public void Resume()
+    {
+        HidePauseMenu();
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quitting game...");
+        Application.Quit();
     }
 }
