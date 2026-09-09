@@ -14,14 +14,24 @@ public class LoadGame : MonoBehaviour
     public void Load()
     {
         string path = Path.Combine(Application.persistentDataPath, "save.json");
-        TextAsset fileData = Resources.Load<TextAsset>(path);
-        string stringData = fileData.text;
+
+        if (!File.Exists(path))
+        {
+            Debug.LogWarning("Save file does not exist.");
+            return;
+        }
+        
+        Debug.Log($"Loaded from: {path}");
+
+        physicsManager.ClearSimulation();
+
+        string stringData = File.ReadAllText(path);
 
         SimulationSaveData data = JsonUtility.FromJson<SimulationSaveData>(stringData);
 
         foreach (AtomData atom in data.atoms)
         {
-            physicsManager.AddAtom(atom.position, atom.velocity, atom.elementNumber);
+            physicsManager.AddAtom(atom.position, atom.velocity, atom.elementNumber, atom.id, true);
         }
 
         foreach (BondData bond in data.bonds)
@@ -30,5 +40,6 @@ public class LoadGame : MonoBehaviour
         }
 
         cam.transform.position = data.cameraPosition;
+        cam.GetComponent<Camera>().orthographicSize = data.cameraZoom;
     }
 }

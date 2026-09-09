@@ -71,11 +71,20 @@ public class PhysicsManager : MonoBehaviour
         }
     }
 
-    public void AddAtom(Vector2 position, Vector2 vel = new Vector2(), int element = 0)
+    public void AddAtom(Vector2 position, Vector2 vel = new Vector2(), int element = 0, uint id = 0, bool setCustomID = false)
     {
         GameObject tmpObj = Instantiate(atomPrefab, new Vector3(position.x, position.y, -idCounter / 100f), quaternion.identity);
         AtomManager tmpManager = tmpObj.GetComponent<AtomManager>();
-        tmpManager.SetID(idCounter);
+
+        if (setCustomID)
+        {
+            tmpManager.SetID(id);
+        }
+        else
+        {
+            tmpManager.SetID(idCounter);
+        }
+
         tmpManager.SetElement(element);
         tmpManager.velocity = vel;
 
@@ -162,6 +171,17 @@ public class PhysicsManager : MonoBehaviour
     {
         timeScale = 1f;
         isPaused = false;
+    }
+
+    public void ClearSimulation()
+    {
+        Debug.Log("clearing simulation!");
+
+        for(int i = 0; i < atoms.Count; i++)
+        {
+            GameObject atom = atoms[0];
+            DeleteAtom(atom.GetComponent<AtomManager>().GetID());
+        }
     }
 
     private ulong PackIDs(uint id1, uint id2)

@@ -12,5 +12,6 @@ public class SimulationSaveData
     
     public List<AtomData> atoms;
     public List<BondData> bonds;
-    public Vector2 cameraPosition;
+    public Vector3 cameraPosition;
+    public float cameraZoom;
 }

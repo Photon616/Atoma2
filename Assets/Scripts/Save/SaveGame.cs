@@ -17,10 +17,17 @@ public class SaveGame : MonoBehaviour
         SimulationSaveData saveData = new SimulationSaveData();
         saveData.atoms = new List<AtomData>();
         saveData.bonds = new List<BondData>();
-        saveData.cameraPosition = new Vector2(cam.transform.position.x, cam.transform.position.y);
+        saveData.cameraPosition = cam.transform.position;
+        saveData.cameraZoom = cam.GetComponent<Camera>().orthographicSize;
 
-        foreach (GameObject atom in physicsManager.atoms)
+        Debug.Log("saving in progress...");
+
+        int cnt = physicsManager.atoms.Count;
+
+        for (int i = 0; i < cnt; i++)
         {
+            GameObject atom = physicsManager.atoms[i];
+
             AtomManager manager = atom.GetComponent<AtomManager>();
             AtomData atomData = new();
 
@@ -31,8 +38,10 @@ public class SaveGame : MonoBehaviour
 
             saveData.atoms.Add(atomData);
 
-            foreach (GameObject atom2 in physicsManager.atoms)
+            for (int j = i; j < cnt; j++)
             {
+                GameObject atom2 = physicsManager.atoms[j];
+                
                 uint idA = manager.GetID();
                 uint idB = atom2.GetComponent<AtomManager>().GetID();
                 ulong key = PackIDs(idA, idB);
@@ -45,6 +54,8 @@ public class SaveGame : MonoBehaviour
                     bondData.atomAId = idA;
                     bondData.atomBId = idB;
                     bondData.order = physicsManager.bonds[key].GetComponent<BondManager>().order;
+
+                    saveData.bonds.Add(bondData);
                 }
             }
         }
@@ -53,6 +64,8 @@ public class SaveGame : MonoBehaviour
         string jsonData = JsonUtility.ToJson(saveData, true);
 
         File.WriteAllText(path, jsonData);
+
+        Debug.Log("saved!");
     }
 
     private ulong PackIDs(uint id1, uint id2)
