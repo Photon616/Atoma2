@@ -6,6 +6,7 @@ public class AtomManager : MonoBehaviour
     [SerializeField] private uint id;
     [SerializeField] private float drag = 1.0f;
     [SerializeField] private float stopThreshold = 0.01f;
+    [SerializeField] private int elementNumber = 0;
     public Vector2 velocity;
     private bool isSelected = false;
     private bool isBeingDragged = false;
@@ -37,6 +38,16 @@ public class AtomManager : MonoBehaviour
     public uint GetID()
     {
         return id;
+    }
+
+    public void SetElement(int n)
+    {
+        elementNumber = n;
+    }
+
+    public int GetElement()
+    {
+        return elementNumber;
     }
 
     public void StartDrag()

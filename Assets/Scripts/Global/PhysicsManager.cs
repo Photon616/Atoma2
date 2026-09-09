@@ -7,9 +7,9 @@ public class PhysicsManager : MonoBehaviour
 {
     public static PhysicsManager Instance{ get; private set; }
     public static float timeScale = 1.0f;
+    public List<GameObject> atoms = new();
+    public Dictionary<ulong, GameObject> bonds = new();
 
-    [SerializeField] private List<GameObject> atoms = new();
-    [SerializeField] private Dictionary<ulong, GameObject> bonds = new();
     [SerializeField] private GameObject atomPrefab;
     [SerializeField] private GameObject bondPrefab;
     [SerializeField] private float maxRepelDistance = 2.0f;
@@ -71,18 +71,20 @@ public class PhysicsManager : MonoBehaviour
         }
     }
 
-    public void AddAtom(Vector2 position)
+    public void AddAtom(Vector2 position, Vector2 vel = new Vector2(), int element = 0)
     {
         GameObject tmpObj = Instantiate(atomPrefab, new Vector3(position.x, position.y, -idCounter / 100f), quaternion.identity);
         AtomManager tmpManager = tmpObj.GetComponent<AtomManager>();
         tmpManager.SetID(idCounter);
+        tmpManager.SetElement(element);
+        tmpManager.velocity = vel;
 
         atoms.Add(tmpObj);
 
         idCounter++;
     }
 
-    public void AddBond(uint id1, uint id2)
+    public void AddBond(uint id1, uint id2, int order = 1)
     {
         ulong key = PackIDs(id1, id2);
 
@@ -94,6 +96,7 @@ public class PhysicsManager : MonoBehaviour
             bonds.Add(key, bond);
 
             tmpManager.SetID(key);
+            tmpManager.order = order;
         }
         else // 있으면 그 결합 오브젝트를 수정
         {
@@ -136,6 +139,7 @@ public class PhysicsManager : MonoBehaviour
         
         bond.GetComponent<BondManager>().MinusOrder();
     }
+
     public void ToggleSimulationSpeed()
     {
         if (isPaused)
