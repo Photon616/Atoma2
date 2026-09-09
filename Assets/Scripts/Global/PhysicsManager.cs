@@ -177,7 +177,7 @@ public class PhysicsManager : MonoBehaviour
     {
         Debug.Log("clearing simulation!");
 
-        for(int i = 0; i < atoms.Count; i++)
+        while (atoms.Count > 0)
         {
             GameObject atom = atoms[0];
             DeleteAtom(atom.GetComponent<AtomManager>().GetID());
