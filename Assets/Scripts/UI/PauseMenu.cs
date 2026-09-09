@@ -5,8 +5,11 @@ public class PauseMenu : MonoBehaviour
     public static PauseMenu Instance{ get; private set; }
     public static bool isPaused = false;
 
-    [SerializeField] GameObject backgroundObject;
-    [SerializeField] GameObject menuObject;
+    [SerializeField] private GameObject backgroundObject;
+    [SerializeField] private GameObject menuObject;
+    [SerializeField] private ConfirmationUI confirmationUI;
+    [SerializeField] private SaveGame saveGame;
+    [SerializeField] private LoadGame loadGame;
 
     private void Awake()
     {
@@ -54,5 +57,25 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Quitting game...");
         Application.Quit();
+    }
+
+    public void AskSave()
+    {
+        confirmationUI.Show("Current Save\nwill be overwritten.", Save);
+    }
+
+    private void Save()
+    {
+        saveGame.Save();
+    }
+    
+    public void AskLoad()
+    {
+        confirmationUI.Show("Unsaved changes\nwill be lost.", Load);
+    }
+
+    private void Load()
+    {
+        loadGame.Load();
     }
 }
