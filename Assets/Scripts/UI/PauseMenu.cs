@@ -61,7 +61,7 @@ public class PauseMenu : MonoBehaviour
 
     public void AskSave()
     {
-        confirmationUI.Show("Current Save\nwill be overwritten.", Save);
+        confirmationUI.Show("Save Simulation?", "Current Save\nwill be overwritten.", Save);
     }
 
     private void Save()
@@ -71,7 +71,7 @@ public class PauseMenu : MonoBehaviour
     
     public void AskLoad()
     {
-        confirmationUI.Show("Unsaved changes\nwill be lost.", Load);
+        confirmationUI.Show("Load Save?", "Current simulation\nwill be lost.", Load);
     }
 
     private void Load()

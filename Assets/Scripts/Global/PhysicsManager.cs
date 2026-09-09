@@ -17,6 +17,10 @@ public class PhysicsManager : MonoBehaviour
     [SerializeField] private float minAttractDistance = 1.5f;
     [SerializeField] private float attractForceEaseRange = 2.0f;
     [SerializeField] private float attractForce = 2.0f;
+
+    // visuals
+    [SerializeField] GameObject pauseIndicator;
+
     private uint idCounter = 0;
     private bool isPaused = false;
 
@@ -165,12 +169,14 @@ public class PhysicsManager : MonoBehaviour
     {
         timeScale = 0f;
         isPaused = true;
+        pauseIndicator.SetActive(true);
     }
 
     public void ResumeSimulation()
     {
         timeScale = 1f;
         isPaused = false;
+        pauseIndicator.SetActive(false);
     }
 
     public void ClearSimulation()
