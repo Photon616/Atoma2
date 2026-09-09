@@ -5,6 +5,12 @@ using UnityEngine;
 public class SaveGame : MonoBehaviour
 {
     [SerializeField] private GameObject cam;
+    PhysicsManager physicsManager;
+
+    void Start()
+    {
+        physicsManager = PhysicsManager.Instance;
+    }
 
     public void Save()
     {
@@ -13,7 +19,7 @@ public class SaveGame : MonoBehaviour
         saveData.bonds = new List<BondData>();
         saveData.cameraPosition = new Vector2(cam.transform.position.x, cam.transform.position.y);
 
-        foreach (GameObject atom in PhysicsManager.Instance.atoms)
+        foreach (GameObject atom in physicsManager.atoms)
         {
             AtomManager manager = atom.GetComponent<AtomManager>();
             AtomData atomData = new();
@@ -25,25 +31,28 @@ public class SaveGame : MonoBehaviour
 
             saveData.atoms.Add(atomData);
 
-            foreach (GameObject atom2 in PhysicsManager.Instance.atoms)
+            foreach (GameObject atom2 in physicsManager.atoms)
             {
                 uint idA = manager.GetID();
                 uint idB = atom2.GetComponent<AtomManager>().GetID();
                 ulong key = PackIDs(idA, idB);
 
-                if (PhysicsManager.Instance.bonds.ContainsKey(key))
+                if (physicsManager.bonds.ContainsKey(key))
                 {
                     BondData bondData = new();
 
                     bondData.id = key;
                     bondData.atomAId = idA;
                     bondData.atomBId = idB;
-                    bondData.order = PhysicsManager.Instance.bonds[key].GetComponent<BondManager>().order;
+                    bondData.order = physicsManager.bonds[key].GetComponent<BondManager>().order;
                 }
             }
         }
 
-        
+        string path = Path.Combine(Application.persistentDataPath, "save.json");
+        string jsonData = JsonUtility.ToJson(saveData, true);
+
+        File.WriteAllText(path, jsonData);
     }
 
     private ulong PackIDs(uint id1, uint id2)
