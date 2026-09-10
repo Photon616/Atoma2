@@ -470,18 +470,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 854657351}
-        m_TargetAssemblyTypeName: ToolSelectionUI, Assembly-CSharp
-        m_MethodName: SetTool
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &49791175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1371,11 +1359,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6d5c1dd1ff208b47933e224ea941ba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolStateManager
-  select: {fileID: 0}
-  place: {fileID: 0}
-  bond: {fileID: 0}
-  delete: {fileID: 0}
-  cut: {fileID: 0}
+  select: {fileID: 49791174}
+  place: {fileID: 1917454961}
+  bond: {fileID: 813278037}
+  delete: {fileID: 1821785367}
+  cut: {fileID: 1707254263}
 --- !u!4 &401915646
 Transform:
   m_ObjectHideFlags: 0
@@ -2519,18 +2507,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 854657351}
-        m_TargetAssemblyTypeName: ToolSelectionUI, Assembly-CSharp
-        m_MethodName: SetTool
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &813278038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2638,6 +2614,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &853578876
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 853578878}
+  - component: {fileID: 853578877}
+  m_Layer: 0
+  m_Name: IsMouseOnUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &853578877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853578876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80dfce5ca3e894b5a82557713ecbc80d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IsMouseOnUI
+--- !u!4 &853578878
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853578876}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -64.14452, y: -0, z: 848257.94}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &854657349
 GameObject:
   m_ObjectHideFlags: 0
@@ -2670,9 +2690,9 @@ RectTransform:
   - {fileID: 1116647050}
   m_Father: {fileID: 270493783}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 80}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &854657351
@@ -2687,11 +2707,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a46dc482a76c84e68b4b9d2a275bcaaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolSelectionUI
-  select: {fileID: 49791174}
-  place: {fileID: 1917454961}
-  bond: {fileID: 813278037}
-  delete: {fileID: 1821785367}
-  cut: {fileID: 1707254263}
 --- !u!1 &906422266
 GameObject:
   m_ObjectHideFlags: 0
@@ -3235,6 +3250,7 @@ GameObject:
   - component: {fileID: 1116647050}
   - component: {fileID: 1116647052}
   - component: {fileID: 1116647051}
+  - component: {fileID: 1116647053}
   m_Layer: 5
   m_Name: Base
   m_TagString: Untagged
@@ -3263,7 +3279,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -460}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 604, y: 84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1116647051
@@ -3304,6 +3320,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1116647049}
   m_CullTransparentMesh: 1
+--- !u!114 &1116647053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116647049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 853578877}
+          m_TargetAssemblyTypeName: IsMouseOnUI, Assembly-CSharp
+          m_MethodName: MouseHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 853578877}
+          m_TargetAssemblyTypeName: IsMouseOnUI, Assembly-CSharp
+          m_MethodName: MouseHoverEnd
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1163484242
 GameObject:
   m_ObjectHideFlags: 0
@@ -4598,18 +4659,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 854657351}
-        m_TargetAssemblyTypeName: ToolSelectionUI, Assembly-CSharp
-        m_MethodName: SetTool
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1707254264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4714,18 +4763,6 @@ MonoBehaviour:
       - m_Target: {fileID: 401915645}
         m_TargetAssemblyTypeName: ToolStateManager, Assembly-CSharp
         m_MethodName: SetCurrentToolWithNum
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 854657351}
-        m_TargetAssemblyTypeName: ToolSelectionUI, Assembly-CSharp
-        m_MethodName: SetTool
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4998,18 +5035,6 @@ MonoBehaviour:
       - m_Target: {fileID: 401915645}
         m_TargetAssemblyTypeName: ToolStateManager, Assembly-CSharp
         m_MethodName: SetCurrentToolWithNum
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 854657351}
-        m_TargetAssemblyTypeName: ToolSelectionUI, Assembly-CSharp
-        m_MethodName: SetTool
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5361,3 +5386,4 @@ SceneRoots:
   - {fileID: 270493783}
   - {fileID: 2131630041}
   - {fileID: 1294184041}
+  - {fileID: 853578878}
