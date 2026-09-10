@@ -42,7 +42,7 @@ public class MouseControlManager : MonoBehaviour
         }
         // Debug.Log(pointingObject);
         
-        if (clickAction.WasPressedThisFrame() && PauseMenu.isPaused == false)
+        if (clickAction.WasPressedThisFrame() && PauseMenu.isPaused == false && !IsMouseOnUI.isMouseOnUI)
         {
             Debug.Log("Left click");
 
