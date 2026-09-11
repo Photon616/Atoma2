@@ -8,7 +8,7 @@ public class AtomManager : MonoBehaviour
     [SerializeField] private float stopThreshold = 0.01f;
     [SerializeField] private int elementNumber = 0;
     public Vector2 velocity;
-    private bool isSelected = false;
+    // private bool isSelected = false;
     private bool isBeingDragged = false;
 
     private void Update()
@@ -28,6 +28,14 @@ public class AtomManager : MonoBehaviour
         {
             velocity = Vector2.zero;
         }
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, PhysicsManager.Instance.GetMaxRepelDistance());
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, PhysicsManager.Instance.GetMinAttractDistance());
     }
 
     public void SetID(uint i)

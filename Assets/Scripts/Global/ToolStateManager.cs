@@ -24,6 +24,7 @@ public class ToolStateManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        SetCurrentTool(Tool.select);
     }
 
     public void SetCurrentTool(Tool tool)
