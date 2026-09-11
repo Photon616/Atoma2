@@ -20,6 +20,7 @@ public class PhysicsManager : MonoBehaviour
 
     // visuals
     [SerializeField] GameObject pauseIndicator;
+    [SerializeField] GameObject unpauseIndicator;
 
     private uint idCounter = 0;
     private bool isPaused = false;
@@ -170,6 +171,7 @@ public class PhysicsManager : MonoBehaviour
         timeScale = 0f;
         isPaused = true;
         pauseIndicator.SetActive(true);
+        unpauseIndicator.SetActive(false);
     }
 
     public void ResumeSimulation()
@@ -177,6 +179,7 @@ public class PhysicsManager : MonoBehaviour
         timeScale = 1f;
         isPaused = false;
         pauseIndicator.SetActive(false);
+        unpauseIndicator.SetActive(true);
     }
 
     public void ClearSimulation()
