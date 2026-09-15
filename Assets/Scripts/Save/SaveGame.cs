@@ -29,12 +29,13 @@ public class SaveGame : MonoBehaviour
             GameObject atom = physicsManager.atoms[i];
 
             AtomManager manager = atom.GetComponent<AtomManager>();
-            AtomData atomData = new();
-
-            atomData.id = manager.GetID();
-            atomData.elementNumber = manager.GetElement();
-            atomData.position = atom.transform.position;
-            atomData.velocity = manager.velocity;
+            AtomData atomData = new()
+            {
+                id = manager.GetID(),
+                elementNumber = manager.GetElement(),
+                position = atom.transform.position,
+                velocity = manager.velocity
+            };
 
             saveData.atoms.Add(atomData);
 

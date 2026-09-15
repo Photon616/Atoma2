@@ -221,7 +221,7 @@ public class PhysicsManager : MonoBehaviour
 
     private float GetAttractForceByDistance(float d)
     {
-        return Mathf.Pow((d - minAttractDistance) / 2, 2);
+        return Mathf.Pow((d - minAttractDistance) / attractForceEaseRange, 2);
     }
 
     public float GetMaxRepelDistance()
