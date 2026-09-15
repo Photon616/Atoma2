@@ -1,0 +1,20 @@
+{
+    "Elements": 
+    [
+        {
+            "number": 0,
+            "name": "TestElement",
+            "symbol": "Tx",
+
+            "mass": 1.0,
+            "simulationRadius": 1.0,
+            "period": 0,
+            "group": 0,
+
+            "fillColor": "#ffffff",
+            "outlineColor": "#000000",
+            "displayRadius": 0.5,
+            "textSize": 6.0
+        }
+    ]
+}
