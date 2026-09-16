@@ -16,4 +16,5 @@ public class ElementData
     public string fillColor;
     public string outlineColor;
     public float displaySize;
+    public bool isTextWhite;
 }

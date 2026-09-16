@@ -7,14 +7,47 @@
             "symbol": "Tx",
 
             "mass": 1.0,
-            "simulationRadius": 1.0,
+            "simulationRadius": 2.0,
             "period": 0,
             "group": 0,
 
             "fillColor": "#ffffff",
             "outlineColor": "#000000",
             "displayRadius": 0.5,
-            "textSize": 6.0
+            "textSize": 6.0,
+            "isTextWhite": false
+        },
+        {
+            "number": 1,
+            "name": "Hydrogen",
+            "symbol": "H",
+
+            "mass": 1.0,
+            "simulationRadius": 1.5,
+            "period": 0,
+            "group": 0,
+
+            "fillColor": "#c0c0c0",
+            "outlineColor": "#808080",
+            "displayRadius": 0.3,
+            "textSize": 4.0,
+            "isTextWhite": false
+        },
+        {
+            "number": 2,
+            "name": "Hellium",
+            "symbol": "H",
+
+            "mass": 1.0,
+            "simulationRadius": 1.0,
+            "period": 0,
+            "group": 0,
+
+            "fillColor": "#c0c0c0",
+            "outlineColor": "#808080",
+            "displayRadius": 0.3,
+            "textSize": 4.0,
+            "isTextWhite": false
         }
     ]
 }
