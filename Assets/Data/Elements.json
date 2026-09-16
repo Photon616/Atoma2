@@ -1,5 +1,5 @@
 {
-    "Elements": 
+    "elements": 
     [
         {
             "number": 0,
@@ -7,7 +7,6 @@
             "symbol": "Tx",
 
             "mass": 1.0,
-            "simulationRadius": 2.0,
             "period": 0,
             "group": 0,
 
@@ -23,7 +22,6 @@
             "symbol": "H",
 
             "mass": 1.0,
-            "simulationRadius": 1.5,
             "period": 0,
             "group": 0,
 
@@ -39,7 +37,6 @@
             "symbol": "H",
 
             "mass": 1.0,
-            "simulationRadius": 1.0,
             "period": 0,
             "group": 0,
 

@@ -90,8 +90,17 @@ public class PhysicsManager : MonoBehaviour
             tmpManager.SetID(idCounter);
         }
 
-        tmpManager.SetElement(element);
+        if (element == 0)
+        {
+            tmpManager.SetElement(SelectedElement.element);
+        }
+        else
+        {
+            tmpManager.SetElement(element);
+        }
         tmpManager.velocity = vel;
+
+        tmpManager.SetAppearance();
 
         atoms.Add(tmpObj);
 

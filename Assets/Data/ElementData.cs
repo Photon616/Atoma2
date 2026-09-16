@@ -8,7 +8,6 @@ public class ElementData
 
     // Chemical properties
     public float mass;
-    public float simulationRadius;
     public int period;
     public int group;
 

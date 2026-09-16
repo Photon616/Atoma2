@@ -2,16 +2,18 @@ using UnityEngine;
 
 public class AtomManager : MonoBehaviour
 {
+    [SerializeField] private AtomAppearance atomAppearance;
     [SerializeField] GameObject marker;
     [SerializeField] private uint id;
     [SerializeField] private float drag = 1.0f;
     [SerializeField] private float stopThreshold = 0.01f;
-    [SerializeField] private int elementNumber = 0;
-    [SerializeField] private float simulationRadius = 2.0f;
-    [SerializeField] private float mass = 1.0f;
     public Vector2 velocity;
     // private bool isSelected = false;
     private bool isBeingDragged = false;
+
+    // 화학적 특성들
+    [SerializeField] private int elementNumber = 0;
+    [SerializeField] private float mass = 1.0f;
 
     private void Update()
     {
@@ -40,6 +42,12 @@ public class AtomManager : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, PhysicsManager.Instance.GetMinAttractDistance());
     }
 
+    public void SetAppearance()
+    {
+        ElementData tmp = ElementDataLoader.element[elementNumber];
+        atomAppearance.SetColor(tmp.fillColor, tmp.outlineColor);
+    }
+
     public void SetID(uint i)
     {
         id = i;
@@ -53,21 +61,12 @@ public class AtomManager : MonoBehaviour
     public void SetElement(int n)
     {
         elementNumber = n;
+        SetMass(ElementDataLoader.element[elementNumber].mass);
     }
 
     public int GetElement()
     {
         return elementNumber;
-    }
-
-    public void SetRadius(float n)
-    {
-        simulationRadius = n;
-    }
-
-    public float GetRadius()
-    {
-        return simulationRadius;
     }
 
     public void SetMass(float n)
