@@ -1348,6 +1348,10 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: -211897120926867446, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: elementSelectionUI
+      value: 
+      objectReference: {fileID: 2120960230}
     - target: {fileID: 2618028381257047904, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
       propertyPath: m_Name
       value: SulfurQuickslotButton
@@ -1781,6 +1785,10 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -211897120926867446, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: elementSelectionUI
+      value: 
+      objectReference: {fileID: 2120960230}
     - target: {fileID: 2618028381257047904, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
       propertyPath: m_Name
       value: HydrogenQuickslotButton
@@ -2405,6 +2413,7 @@ GameObject:
   - component: {fileID: 601432122}
   - component: {fileID: 601432121}
   - component: {fileID: 601432120}
+  - component: {fileID: 601432123}
   m_Layer: 5
   m_Name: ElementSelectionButton
   m_TagString: Untagged
@@ -2475,7 +2484,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 601432121}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2120960230}
+        m_TargetAssemblyTypeName: ElementSelectionUI, Assembly-CSharp
+        m_MethodName: OpenElementSelectionUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &601432121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2514,6 +2535,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601432118}
   m_CullTransparentMesh: 1
+--- !u!114 &601432123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601432118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 853578877}
+          m_TargetAssemblyTypeName: IsMouseOnUI, Assembly-CSharp
+          m_MethodName: MouseHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 853578877}
+          m_TargetAssemblyTypeName: IsMouseOnUI, Assembly-CSharp
+          m_MethodName: MouseHoverEnd
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &617404524
 GameObject:
   m_ObjectHideFlags: 0
@@ -4255,7 +4321,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1063686275}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2120960230}
+        m_TargetAssemblyTypeName: ElementSelectionUI, Assembly-CSharp
+        m_MethodName: CloseElementSelectionUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1063686275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4449,6 +4527,10 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: -211897120926867446, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: elementSelectionUI
+      value: 
+      objectReference: {fileID: 2120960230}
     - target: {fileID: 2618028381257047904, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
       propertyPath: m_Name
       value: PhosphorusQuickslotButton
@@ -6380,6 +6462,10 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: -211897120926867446, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: elementSelectionUI
+      value: 
+      objectReference: {fileID: 2120960230}
     - target: {fileID: 2618028381257047904, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
       propertyPath: m_Name
       value: NitrogenQuickslotButton
@@ -6615,6 +6701,10 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -211897120926867446, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: elementSelectionUI
+      value: 
+      objectReference: {fileID: 2120960230}
     - target: {fileID: 2618028381257047904, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
       propertyPath: m_Name
       value: OxygenQuickslotButton
@@ -7419,7 +7509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ElementSelectionUI
   ElementSelectionButton: {fileID: 601432118}
   ElementSelectionButtonText: {fileID: 724865492}
-  QuickslotObject: {fileID: 0}
+  QuickslotObject: {fileID: 857092089}
 --- !u!1 &2131630038
 GameObject:
   m_ObjectHideFlags: 0
@@ -7519,6 +7609,10 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: -211897120926867446, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: elementSelectionUI
+      value: 
+      objectReference: {fileID: 2120960230}
     - target: {fileID: 2618028381257047904, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
       propertyPath: m_Name
       value: CarbonQuickslotButton
