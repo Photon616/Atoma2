@@ -47,7 +47,7 @@ public class AtomManager : MonoBehaviour
         ElementData tmp = ElementDataLoader.element[elementNumber];
         atomAppearance.SetColor(tmp.fillColor, tmp.outlineColor);
         atomAppearance.SetSize(tmp.displaySize);
-        Debug.Log(tmp.displaySize);
+        // Debug.Log(tmp.displaySize);
     }
 
     public void SetID(uint i)
