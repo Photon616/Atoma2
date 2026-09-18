@@ -12,7 +12,7 @@
 
             "fillColor": "#ffffff",
             "outlineColor": "#000000",
-            "displayRadius": 0.5,
+            "displaySize": 1.0,
             "textSize": 6.0,
             "isTextWhite": false
         },
@@ -22,12 +22,12 @@
             "symbol": "H",
 
             "mass": 1.0,
-            "period": 0,
-            "group": 0,
+            "period": 1,
+            "group": 1,
 
             "fillColor": "#c0c0c0",
             "outlineColor": "#808080",
-            "displayRadius": 0.3,
+            "displaySize": 0.6,
             "textSize": 4.0,
             "isTextWhite": false
         },
@@ -37,13 +37,133 @@
             "symbol": "H",
 
             "mass": 1.0,
-            "period": 0,
-            "group": 0,
+            "period": 1,
+            "group": 18,
 
-            "fillColor": "#c0c0c0",
-            "outlineColor": "#808080",
-            "displayRadius": 0.3,
-            "textSize": 4.0,
+            "fillColor": "#ffffff",
+            "outlineColor": "#000000",
+            "displaySize": 1.0,
+            "textSize": 6.0,
+            "isTextWhite": false
+        },
+        {
+            "number": 3,
+            "name": "Lithium",
+            "symbol": "Li",
+
+            "mass": 1.0,
+            "period": 1,
+            "group": 18,
+
+            "fillColor": "#ffffff",
+            "outlineColor": "#000000",
+            "displaySize": 1.0,
+            "textSize": 6.0,
+            "isTextWhite": false
+        },
+        {
+            "number": 4,
+            "name": "Berylium",
+            "symbol": "Be",
+
+            "mass": 1.0,
+            "period": 1,
+            "group": 18,
+
+            "fillColor": "#ffffff",
+            "outlineColor": "#000000",
+            "displaySize": 1.0,
+            "textSize": 6.0,
+            "isTextWhite": false
+        },
+        {
+            "number": 5,
+            "name": "Boron",
+            "symbol": "B",
+
+            "mass": 1.0,
+            "period": 1,
+            "group": 18,
+
+            "fillColor": "#ffffff",
+            "outlineColor": "#000000",
+            "displaySize": 1.0,
+            "textSize": 6.0,
+            "isTextWhite": false
+        },
+        {
+            "number": 6,
+            "name": "Carbon",
+            "symbol": "C",
+
+            "mass": 1.0,
+            "period": 1,
+            "group": 18,
+
+            "fillColor": "#ffffff",
+            "outlineColor": "#000000",
+            "displaySize": 1.0,
+            "textSize": 6.0,
+            "isTextWhite": false
+        },
+        {
+            "number": 7,
+            "name": "Nitrogen",
+            "symbol": "N",
+
+            "mass": 1.0,
+            "period": 1,
+            "group": 18,
+
+            "fillColor": "#ffffff",
+            "outlineColor": "#000000",
+            "displaySize": 1.0,
+            "textSize": 6.0,
+            "isTextWhite": false
+        },
+        {
+            "number": 8,
+            "name": "Oxygen",
+            "symbol": "O",
+
+            "mass": 1.0,
+            "period": 1,
+            "group": 18,
+
+            "fillColor": "#ffffff",
+            "outlineColor": "#000000",
+            "displaySize": 1.0,
+            "textSize": 6.0,
+            "isTextWhite": false
+        },
+        {
+            "number": 9,
+            "name": "Flourine",
+            "symbol": "F",
+
+            "mass": 1.0,
+            "period": 1,
+            "group": 18,
+
+            "fillColor": "#ffffff",
+            "outlineColor": "#000000",
+            "displaySize": 1.0,
+            "textSize": 6.0,
+            "isTextWhite": false
+        },
+        {
+            "number": 9,
+            "name": "Neon",
+            "symbol": "Ne",
+
+            "mass": 1.0,
+            "period": 1,
+            "group": 18,
+
+            "fillColor": "#ffffff",
+            "outlineColor": "#000000",
+            "displaySize": 1.0,
+            "textSize": 6.0,
             "isTextWhite": false
         }
     ]

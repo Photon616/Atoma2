@@ -592,5 +592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3fd3526bed33bb4b824737e6039c5bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AtomAppearance
+  fillObject: {fileID: 3107269414060834861}
+  outlineObject: {fileID: 7857344131744316315}
   fill: {fileID: 3262745600548023675}
   outline: {fileID: 5788042152009169497}
