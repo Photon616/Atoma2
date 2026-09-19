@@ -1031,10 +1031,10 @@ RectTransform:
   - {fileID: 1725564170}
   - {fileID: 854657350}
   - {fileID: 1267311775}
-  - {fileID: 1560964842}
-  - {fileID: 617404525}
   - {fileID: 1504751713}
   - {fileID: 2120960227}
+  - {fileID: 1560964842}
+  - {fileID: 617404525}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7434,6 +7434,7 @@ MonoBehaviour:
   attractForce: 32
   pauseIndicator: {fileID: 1030397559}
   unpauseIndicator: {fileID: 426901185}
+  isPaused: 0
 --- !u!4 &2118213046
 Transform:
   m_ObjectHideFlags: 0
