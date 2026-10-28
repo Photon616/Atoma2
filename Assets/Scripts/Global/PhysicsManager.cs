@@ -23,7 +23,7 @@ public class PhysicsManager : MonoBehaviour
     [SerializeField] GameObject unpauseIndicator;
 
     private uint idCounter = 0;
-    private bool isPaused = false;
+    public bool isPaused = false;
 
     private void Awake()
     {

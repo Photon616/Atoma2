@@ -19,6 +19,7 @@ public class ToolStateManager : MonoBehaviour
     [SerializeField] Button bond;
     [SerializeField] Button delete;
     [SerializeField] Button cut;
+    [SerializeField] GameObject elementSelectionUI;
     private Tool currentTool = Tool.select;
 
     void Awake()
@@ -53,5 +54,7 @@ public class ToolStateManager : MonoBehaviour
         bond.interactable   = currentTool != Tool.bond;
         delete.interactable = currentTool != Tool.delete;
         cut.interactable    = currentTool != Tool.cut;
+
+        elementSelectionUI.SetActive(currentTool == Tool.place);
     }
 }

@@ -10,6 +10,7 @@ public class KeyboardControlManager : MonoBehaviour
     private InputAction cutAction;
     private InputAction escapeAction;
     private InputAction pauseAction;
+    private bool wasPaused = false;
 
     private void Awake()
     {
@@ -49,7 +50,22 @@ public class KeyboardControlManager : MonoBehaviour
         if (escapeAction.WasPressedThisFrame())
         {
             PauseMenu.Instance.Toggle();
-            PhysicsManager.Instance.ToggleSimulationSpeed();
+            if (PauseMenu.isPaused)
+            {
+                wasPaused = PhysicsManager.Instance.isPaused;
+                PhysicsManager.Instance.PauseSimulation();
+            }
+            else
+            {
+                if (wasPaused)
+                {
+                    PhysicsManager.Instance.PauseSimulation();
+                }
+                else
+                {
+                    PhysicsManager.Instance.ResumeSimulation();
+                }
+            }
         }
         if (pauseAction.WasPressedThisFrame())
         {

@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private ConfirmationUI confirmationUI;
     [SerializeField] private SaveGame saveGame;
     [SerializeField] private LoadGame loadGame;
+    private bool wasPaused = false;
 
     private void Awake()
     {
@@ -38,6 +39,7 @@ public class PauseMenu : MonoBehaviour
     {
         backgroundObject.SetActive(true);
         menuObject.SetActive(true);
+        wasPaused = PhysicsManager.Instance.isPaused;
         isPaused = true;
     }
 
@@ -45,7 +47,7 @@ public class PauseMenu : MonoBehaviour
     {
         menuObject.SetActive(false);
         backgroundObject.SetActive(false);
-        isPaused = false;
+        isPaused = wasPaused;
     }
 
     public void Resume()

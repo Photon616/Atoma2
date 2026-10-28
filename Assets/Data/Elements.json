@@ -52,8 +52,8 @@
             "symbol": "Li",
 
             "mass": 1.0,
-            "period": 1,
-            "group": 18,
+            "period": 2,
+            "group": 1,
 
             "fillColor": "#ffffff",
             "outlineColor": "#000000",
@@ -67,8 +67,8 @@
             "symbol": "Be",
 
             "mass": 1.0,
-            "period": 1,
-            "group": 18,
+            "period": 2,
+            "group": 2,
 
             "fillColor": "#ffffff",
             "outlineColor": "#000000",
@@ -82,8 +82,8 @@
             "symbol": "B",
 
             "mass": 1.0,
-            "period": 1,
-            "group": 18,
+            "period": 2,
+            "group": 13,
 
             "fillColor": "#ffffff",
             "outlineColor": "#000000",
@@ -97,8 +97,8 @@
             "symbol": "C",
 
             "mass": 1.0,
-            "period": 1,
-            "group": 18,
+            "period": 2,
+            "group": 14,
 
             "fillColor": "#ffffff",
             "outlineColor": "#000000",
@@ -112,8 +112,8 @@
             "symbol": "N",
 
             "mass": 1.0,
-            "period": 1,
-            "group": 18,
+            "period": 2,
+            "group": 15,
 
             "fillColor": "#ffffff",
             "outlineColor": "#000000",
@@ -127,8 +127,8 @@
             "symbol": "O",
 
             "mass": 1.0,
-            "period": 1,
-            "group": 18,
+            "period": 2,
+            "group": 16,
 
             "fillColor": "#ffffff",
             "outlineColor": "#000000",
@@ -142,7 +142,22 @@
             "symbol": "F",
 
             "mass": 1.0,
-            "period": 1,
+            "period": 2,
+            "group": 17,
+
+            "fillColor": "#ffffff",
+            "outlineColor": "#000000",
+            "displaySize": 1.0,
+            "textSize": 6.0,
+            "isTextWhite": false
+        },
+        {
+            "number": 10,
+            "name": "Neon",
+            "symbol": "Ne",
+
+            "mass": 1.0,
+            "period": 2,
             "group": 18,
 
             "fillColor": "#ffffff",
@@ -152,13 +167,88 @@
             "isTextWhite": false
         },
         {
-            "number": 9,
-            "name": "Neon",
-            "symbol": "Ne",
+            "number": 11,
+            "name": "Sodium",
+            "symbol": "Na",
 
             "mass": 1.0,
-            "period": 1,
-            "group": 18,
+            "period": 3,
+            "group": 1,
+
+            "fillColor": "#ffffff",
+            "outlineColor": "#000000",
+            "displaySize": 1.0,
+            "textSize": 6.0,
+            "isTextWhite": false
+        },
+        {
+            "number": 12,
+            "name": "Magnesium",
+            "symbol": "Mg",
+
+            "mass": 1.0,
+            "period": 3,
+            "group": 2,
+
+            "fillColor": "#ffffff",
+            "outlineColor": "#000000",
+            "displaySize": 1.0,
+            "textSize": 6.0,
+            "isTextWhite": false
+        },
+        {
+            "number": 13,
+            "name": "Aluminum",
+            "symbol": "Al",
+
+            "mass": 1.0,
+            "period": 3,
+            "group": 13,
+
+            "fillColor": "#ffffff",
+            "outlineColor": "#000000",
+            "displaySize": 1.0,
+            "textSize": 6.0,
+            "isTextWhite": false
+        },
+        {
+            "number": 14,
+            "name": "Silicon",
+            "symbol": "Si",
+
+            "mass": 1.0,
+            "period": 3,
+            "group": 14,
+
+            "fillColor": "#ffffff",
+            "outlineColor": "#000000",
+            "displaySize": 1.0,
+            "textSize": 6.0,
+            "isTextWhite": false
+        },
+        {
+            "number": 15,
+            "name": "Phosphorus",
+            "symbol": "P",
+
+            "mass": 1.0,
+            "period": 3,
+            "group": 15,
+
+            "fillColor": "#ffffff",
+            "outlineColor": "#000000",
+            "displaySize": 1.0,
+            "textSize": 6.0,
+            "isTextWhite": false
+        },
+        {
+            "number": 16,
+            "name": "Sulfur",
+            "symbol": "S",
+
+            "mass": 1.0,
+            "period": 3,
+            "group": 15,
 
             "fillColor": "#ffffff",
             "outlineColor": "#000000",
