@@ -25,9 +25,9 @@
             "period": 1,
             "group": 1,
 
-            "fillColor": "#c0c0c0",
+            "fillColor": "#dddddd",
             "outlineColor": "#808080",
-            "displaySize": 0.6,
+            "displaySize": 0.8,
             "textSize": 4.0,
             "isTextWhite": false
         },
@@ -100,11 +100,11 @@
             "period": 2,
             "group": 14,
 
-            "fillColor": "#ffffff",
-            "outlineColor": "#000000",
+            "fillColor": "#707070",
+            "outlineColor": "#202020",
             "displaySize": 1.0,
             "textSize": 6.0,
-            "isTextWhite": false
+            "isTextWhite": true
         },
         {
             "number": 7,
@@ -115,11 +115,11 @@
             "period": 2,
             "group": 15,
 
-            "fillColor": "#ffffff",
-            "outlineColor": "#000000",
+            "fillColor": "#6699cc",
+            "outlineColor": "#334d66",
             "displaySize": 1.0,
             "textSize": 6.0,
-            "isTextWhite": false
+            "isTextWhite": true
         },
         {
             "number": 8,
@@ -130,11 +130,11 @@
             "period": 2,
             "group": 16,
 
-            "fillColor": "#ffffff",
-            "outlineColor": "#000000",
+            "fillColor": "#bf4f51",
+            "outlineColor": "#602829",
             "displaySize": 1.0,
             "textSize": 6.0,
-            "isTextWhite": false
+            "isTextWhite": true
         },
         {
             "number": 9,
@@ -235,8 +235,8 @@
             "period": 3,
             "group": 15,
 
-            "fillColor": "#ffffff",
-            "outlineColor": "#000000",
+            "fillColor": "#ff7f50",
+            "outlineColor": "#804028",
             "displaySize": 1.0,
             "textSize": 6.0,
             "isTextWhite": false
@@ -250,11 +250,11 @@
             "period": 3,
             "group": 15,
 
-            "fillColor": "#ffffff",
-            "outlineColor": "#000000",
+            "fillColor": "#ffbf00",
+            "outlineColor": "#806000",
             "displaySize": 1.0,
             "textSize": 6.0,
-            "isTextWhite": false
+            "isTextWhite": true
         }
     ]
 }
