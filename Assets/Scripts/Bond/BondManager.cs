@@ -6,6 +6,7 @@ public class BondManager : MonoBehaviour
     [SerializeField] private ulong id;
     [SerializeField] private float width;
     private BondOrderVisual bondOrderVisual;
+    private LoadGame loadGame;
     // private LineRenderer lr;
     public int order = 1;
 
@@ -13,6 +14,12 @@ public class BondManager : MonoBehaviour
     {
         // lr = GetComponent<LineRenderer>();
         bondOrderVisual = GetComponent<BondOrderVisual>();
+    }
+
+    private void Start()
+    {
+        loadGame = LoadGame.Instance;
+        loadGame.OnLoadFinished += UpdateVisual;
     }
 
     public ulong GetID()
@@ -44,7 +51,7 @@ public class BondManager : MonoBehaviour
         if (order < 4)
         {
             order++;
-            bondOrderVisual.UpdateVisual(order);
+            bondOrderVisual.UpdateVisual();
         }
     }
 
@@ -53,12 +60,17 @@ public class BondManager : MonoBehaviour
         if (order > 1)
         {
             order--;
-            bondOrderVisual.UpdateVisual(order);
+            bondOrderVisual.UpdateVisual();
         }
         else
         {
             DestroySelf();
         }
+    }
+
+    public void UpdateVisual()
+    {
+        bondOrderVisual.UpdateVisual();
     }
 
     public void DestroySelf()

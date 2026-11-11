@@ -14,40 +14,15 @@ public class BondOrderVisual : MonoBehaviour
         bm = GetComponent<BondManager>();
     }
 
-    public void UpdateVisual(int order)
+    public void UpdateVisual()
     {
-        switch (order)
-        {
-            case 1:
-                one.SetActive(true); //
-                two.SetActive(false);
-                three.SetActive(false);
-                four.SetActive(false);
-                break;
+        int order = bm.order;
 
-            case 2:
-                one.SetActive(false);
-                two.SetActive(true); //
-                three.SetActive(false);
-                four.SetActive(false);
-                break;
+        one.SetActive(order == 1);
+        two.SetActive(order == 2);
+        three.SetActive(order == 3);
+        four.SetActive(order == 4);
 
-            case 3:
-                one.SetActive(false);
-                two.SetActive(false); 
-                three.SetActive(true); //
-                four.SetActive(false);
-                break;
-
-            case 4:
-                one.SetActive(false);
-                two.SetActive(false); 
-                three.SetActive(false);
-                four.SetActive(true); //
-                break;
-
-            default:
-            break;
-        }
+        Debug.Log($"{bm.GetID()}, Updated bond visuals to: {order}!");
     }
 }

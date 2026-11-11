@@ -1,14 +1,37 @@
+using System;
 using System.IO;
 using UnityEngine;
 
 public class LoadGame : MonoBehaviour
 {
+    public static LoadGame Instance{get; private set;}
+    public event Action OnLoadFinished;
+
     [SerializeField] private GameObject cam;
+    private int wasLoaded = 0;
     PhysicsManager physicsManager;
 
-    void Start()
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    private void Start()
     {
         physicsManager = PhysicsManager.Instance;
+    }
+
+    private void Update()
+    {
+        if (wasLoaded > 0)
+        {
+            wasLoaded--;
+        }
+        if (wasLoaded == 1)
+        {
+            OnLoadFinished?.Invoke();
+            wasLoaded = 0;
+        }
     }
 
     public void Load()
@@ -41,5 +64,7 @@ public class LoadGame : MonoBehaviour
 
         cam.transform.position = data.cameraPosition;
         cam.GetComponent<Camera>().orthographicSize = data.cameraZoom;
+
+        wasLoaded = 3;
     }
 }
