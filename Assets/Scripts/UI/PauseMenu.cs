@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private ConfirmationUI confirmationUI;
     [SerializeField] private SaveGame saveGame;
     [SerializeField] private LoadGame loadGame;
+    private PhysicsManager physicsManager;
     private bool wasPaused = false;
 
     private void Awake()
@@ -19,6 +20,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
+        physicsManager = PhysicsManager.Instance;
         menuObject.SetActive(false);
         backgroundObject.SetActive(false);
     }
@@ -79,5 +81,15 @@ public class PauseMenu : MonoBehaviour
     private void Load()
     {
         loadGame.Load();
+    }
+
+    public void AskReset()
+    {
+        confirmationUI.Show("Reset Simulation?", "Current simulation\nwill be lost.", Reset);
+    }
+
+    private void Reset()
+    {
+        physicsManager.ClearSimulation();
     }
 }
