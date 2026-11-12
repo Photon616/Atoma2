@@ -8059,10 +8059,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CarbonQuickslotButton
       objectReference: {fileID: 0}
-    - target: {fileID: 5218477513817178829, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 7cd8f3ed72607384e927fc3fcc44d3c0, type: 3}
     - target: {fileID: 6904483375035850332, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
       propertyPath: m_text
       value: 'C
