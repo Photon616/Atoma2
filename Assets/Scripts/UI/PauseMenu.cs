@@ -5,6 +5,8 @@ public class PauseMenu : MonoBehaviour
     public static PauseMenu Instance{ get; private set; }
     public static bool isPausedWithESC = false;
 
+    [SerializeField] private GameObject canv;
+    [SerializeField] private GameObject alertTextObject;
     [SerializeField] private GameObject backgroundObject;
     [SerializeField] private GameObject menuObject;
     [SerializeField] private GameObject[] inGameUIs = new GameObject[10];
@@ -97,6 +99,10 @@ public class PauseMenu : MonoBehaviour
     private void Save()
     {
         saveGame.Save();
+
+        GameObject tmp = Instantiate(alertTextObject, canv.transform);
+        tmp.GetComponent<AlertText>().ShowText("Saved!");
+
         ShowMenu();
     }
     
@@ -109,6 +115,10 @@ public class PauseMenu : MonoBehaviour
     private void Load()
     {
         loadGame.Load();
+
+        GameObject tmp = Instantiate(alertTextObject, canv.transform);
+        tmp.GetComponent<AlertText>().ShowText("Loaded!");
+
         ShowMenu();
     }
 
@@ -121,6 +131,10 @@ public class PauseMenu : MonoBehaviour
     private void Reset()
     {
         physicsManager.ClearSimulation();
+
+        GameObject tmp = Instantiate(alertTextObject, canv.transform);
+        tmp.GetComponent<AlertText>().ShowText("Cleared!");
+
         ShowMenu();
     }
 
