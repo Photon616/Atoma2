@@ -76,6 +76,12 @@ public class PauseMenu : MonoBehaviour
         HidePauseMenu();
     }
 
+    public void AskQuit()
+    {
+        confirmationUI.Show("Quit Atoma?", "Unsaved changes will be lost.", QuitGame, Cancel);
+        menuObject.SetActive(false);
+    }
+
     public void QuitGame()
     {
         Debug.Log("Quitting game...");
