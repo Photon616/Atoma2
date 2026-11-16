@@ -50,22 +50,22 @@ public class KeyboardControlManager : MonoBehaviour
         if (escapeAction.WasPressedThisFrame())
         {
             PauseMenu.Instance.Toggle();
-            if (PauseMenu.isPaused)
-            {
-                wasPaused = PhysicsManager.Instance.isPaused;
-                PhysicsManager.Instance.PauseSimulation();
-            }
-            else
-            {
-                if (wasPaused)
-                {
-                    PhysicsManager.Instance.PauseSimulation();
-                }
-                else
-                {
-                    PhysicsManager.Instance.ResumeSimulation();
-                }
-            }
+            // if (PauseMenu.isPausedWithESC)
+            // {
+            //     wasPaused = PhysicsManager.Instance.isPaused;
+            //     PhysicsManager.Instance.PauseSimulation();
+            // }
+            // else
+            // {
+            //     if (wasPaused)
+            //     {
+            //         PhysicsManager.Instance.PauseSimulation();
+            //     }
+            //     else
+            //     {
+            //         PhysicsManager.Instance.ResumeSimulation();
+            //     }
+            // }
         }
         if (pauseAction.WasPressedThisFrame())
         {

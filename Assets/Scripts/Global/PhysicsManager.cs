@@ -177,6 +177,8 @@ public class PhysicsManager : MonoBehaviour
 
     public void PauseSimulation()
     {
+        Debug.Log("simulation paused");
+
         timeScale = 0f;
         isPaused = true;
         pauseIndicator.SetActive(true);
@@ -185,6 +187,8 @@ public class PhysicsManager : MonoBehaviour
 
     public void ResumeSimulation()
     {
+        Debug.Log("resuming simulation");
+
         timeScale = 1f;
         isPaused = false;
         pauseIndicator.SetActive(false);

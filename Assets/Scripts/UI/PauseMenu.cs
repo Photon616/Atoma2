@@ -3,7 +3,7 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     public static PauseMenu Instance{ get; private set; }
-    public static bool isPaused = false;
+    public static bool isPausedWithESC = false;
 
     [SerializeField] private GameObject backgroundObject;
     [SerializeField] private GameObject menuObject;
@@ -28,7 +28,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Toggle()
     {
-        if (isPaused)
+        if (isPausedWithESC)
         {
             HidePauseMenu();
         }
@@ -49,7 +49,8 @@ public class PauseMenu : MonoBehaviour
         }
 
         wasPaused = PhysicsManager.Instance.isPaused;
-        isPaused = true;
+        PhysicsManager.Instance.PauseSimulation();
+        isPausedWithESC = true;
     }
 
     public void HidePauseMenu()
@@ -62,7 +63,12 @@ public class PauseMenu : MonoBehaviour
             obj.SetActive(true);
         }
 
-        isPaused = wasPaused;
+        if (!wasPaused)
+        {
+            PhysicsManager.Instance.ResumeSimulation();
+        }
+
+        isPausedWithESC = false;
     }
 
     public void Resume()
@@ -78,35 +84,38 @@ public class PauseMenu : MonoBehaviour
 
     public void AskSave()
     {
-        confirmationUI.Show("Save Simulation?", "Current Save\nwill be overwritten.", Save, Cancel);
+        confirmationUI.Show("Save Simulation?", "Current Save will be overwritten.", Save, Cancel);
         menuObject.SetActive(false);
     }
 
     private void Save()
     {
         saveGame.Save();
+        ShowMenu();
     }
     
     public void AskLoad()
     {
-        confirmationUI.Show("Load Save?", "Current simulation\nwill be lost.", Load, Cancel);
+        confirmationUI.Show("Load Save?", "Current simulation will be lost.", Load, Cancel);
         menuObject.SetActive(false);
     }
 
     private void Load()
     {
         loadGame.Load();
+        ShowMenu();
     }
 
     public void AskReset()
     {
-        confirmationUI.Show("Reset Simulation?", "Current simulation\nwill be lost.", Reset, Cancel);
+        confirmationUI.Show("Reset Simulation?", "Current simulation will be lost.", Reset, Cancel);
         menuObject.SetActive(false);
     }
 
     private void Reset()
     {
         physicsManager.ClearSimulation();
+        ShowMenu();
     }
 
     public void ShowMenu()
