@@ -5875,6 +5875,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
   backgroundObject: {fileID: 1697245847}
   menuObject: {fileID: 564733775}
+  inGameUIs:
+  - {fileID: 1725564169}
+  - {fileID: 854657349}
+  - {fileID: 2120960226}
   confirmationUI: {fileID: 617404526}
   saveGame: {fileID: 1294184040}
   loadGame: {fileID: 1294184039}

@@ -9,17 +9,19 @@ public class ConfirmationUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI messageText;
 
     private System.Action confirmAction;
+    private System.Action cancelAction;
 
     private void Start()
     {
         panel.SetActive(false);
     }
 
-    public void Show(string title, string message, System.Action action)
+    public void Show(string title, string message, System.Action confirmAction, System.Action CancelAction)
     {
         titleText.text = title;
         messageText.text = message;
-        confirmAction = action;
+        this.confirmAction = confirmAction;
+        this.cancelAction = CancelAction;
         panel.SetActive(true);
     }
 
@@ -31,6 +33,7 @@ public class ConfirmationUI : MonoBehaviour
 
     public void Cancel()
     {
+        cancelAction?.Invoke();
         panel.SetActive(false);
         confirmAction = null;
     }
