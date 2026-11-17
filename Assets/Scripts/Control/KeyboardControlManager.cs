@@ -10,7 +10,7 @@ public class KeyboardControlManager : MonoBehaviour
     private InputAction cutAction;
     private InputAction escapeAction;
     private InputAction pauseAction;
-    private bool wasPaused = false;
+    // private bool wasPaused = false;
 
     private void Awake()
     {
