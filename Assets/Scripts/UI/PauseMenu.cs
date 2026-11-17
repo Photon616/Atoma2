@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject backgroundObject;
     [SerializeField] private GameObject menuObject;
     [SerializeField] private GameObject[] inGameUIs = new GameObject[10];
+    [SerializeField] private bool[] wasUIActive = new bool[32];
     [SerializeField] private ConfirmationUI confirmationUI;
     [SerializeField] private SaveGame saveGame;
     [SerializeField] private LoadGame loadGame;
@@ -45,9 +46,12 @@ public class PauseMenu : MonoBehaviour
         backgroundObject.SetActive(true);
         menuObject.SetActive(true);
 
-        foreach (GameObject obj in inGameUIs)
+        int size = inGameUIs.Length;
+        for (int i = 0; i < size; i++)
         {
-            obj.SetActive(false);
+            GameObject tmp = inGameUIs[i];
+            wasUIActive[i] = tmp.activeSelf;
+            tmp.SetActive(false);
         }
 
         wasPaused = PhysicsManager.Instance.isPaused;
@@ -60,9 +64,10 @@ public class PauseMenu : MonoBehaviour
         menuObject.SetActive(false);
         backgroundObject.SetActive(false);
 
-        foreach (GameObject obj in inGameUIs)
+        int size = inGameUIs.Length;
+        for (int i = 0; i < size; i++)
         {
-            obj.SetActive(true);
+            inGameUIs[i].SetActive(wasUIActive[i]);
         }
 
         if (!wasPaused)
