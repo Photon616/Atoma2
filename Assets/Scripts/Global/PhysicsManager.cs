@@ -22,12 +22,18 @@ public class PhysicsManager : MonoBehaviour
     [SerializeField] GameObject pauseIndicator;
     [SerializeField] GameObject unpauseIndicator;
 
+    private AudioGod audioGod;
     private uint idCounter = 0;
     public bool isPaused = false;
 
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        audioGod = AudioGod.Instance;
     }
 
     private void Update()
@@ -105,6 +111,8 @@ public class PhysicsManager : MonoBehaviour
         atoms.Add(tmpObj);
 
         idCounter++;
+
+        audioGod.Pop();
     }
 
     public void AddBond(uint id1, uint id2, int order = 1)
@@ -125,7 +133,8 @@ public class PhysicsManager : MonoBehaviour
         {
             bonds[key].GetComponent<BondManager>().PlusOrder();
         }
-
+        
+        audioGod.Snap();
     }
     
     public void DeleteAtom(uint id)
@@ -148,6 +157,8 @@ public class PhysicsManager : MonoBehaviour
         }
 
         tmpManager.DestroySelf();
+
+        audioGod.Boop();
     }
 
     public void DeleteBond(ulong id)
@@ -161,6 +172,8 @@ public class PhysicsManager : MonoBehaviour
         }
         
         bond.GetComponent<BondManager>().MinusOrder();
+        
+        audioGod.Snip();
     }
 
     public void ToggleSimulationSpeed()
@@ -173,6 +186,8 @@ public class PhysicsManager : MonoBehaviour
         {
             PauseSimulation();
         }
+        
+        audioGod.Tick();
     }
 
     public void PauseSimulation()

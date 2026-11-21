@@ -470,6 +470,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1862484606}
+        m_TargetAssemblyTypeName: AudioGod, Assembly-CSharp
+        m_MethodName: Tick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &49791175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -615,6 +627,18 @@ MonoBehaviour:
       - m_Target: {fileID: 617404526}
         m_TargetAssemblyTypeName: ConfirmationUI, Assembly-CSharp
         m_MethodName: Confirm
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1862484606}
+        m_TargetAssemblyTypeName: AudioGod, Assembly-CSharp
+        m_MethodName: Tick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1046,6 +1070,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1862484606}
+        m_TargetAssemblyTypeName: AudioGod, Assembly-CSharp
+        m_MethodName: Tick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &265078320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1440,7 +1476,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1862484604}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &330585547
@@ -1653,8 +1690,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 857092095}
     - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1862484606}
+    - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Tick
+      objectReference: {fileID: 0}
+    - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AudioGod, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: -211897120926867446, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
       propertyPath: elementSelectionUI
@@ -2094,8 +2147,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 857092095}
     - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1862484606}
+    - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Tick
+      objectReference: {fileID: 0}
+    - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AudioGod, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: -211897120926867446, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
       propertyPath: elementSelectionUI
@@ -2722,6 +2791,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1862484606}
+        m_TargetAssemblyTypeName: AudioGod, Assembly-CSharp
+        m_MethodName: Tick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &592139205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2847,6 +2928,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2120960230}
         m_TargetAssemblyTypeName: ElementSelectionUI, Assembly-CSharp
         m_MethodName: OpenElementSelectionUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1862484606}
+        m_TargetAssemblyTypeName: AudioGod, Assembly-CSharp
+        m_MethodName: Tick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3556,6 +3649,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1862484606}
+        m_TargetAssemblyTypeName: AudioGod, Assembly-CSharp
+        m_MethodName: Tick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &757172062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3665,6 +3770,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1862484606}
+        m_TargetAssemblyTypeName: AudioGod, Assembly-CSharp
+        m_MethodName: Tick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4133,6 +4250,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1862484606}
+        m_TargetAssemblyTypeName: AudioGod, Assembly-CSharp
+        m_MethodName: Tick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &906422269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4257,6 +4386,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1560964843}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: AskSave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1862484606}
+        m_TargetAssemblyTypeName: AudioGod, Assembly-CSharp
+        m_MethodName: Tick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4614,6 +4755,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1862484606}
+        m_TargetAssemblyTypeName: AudioGod, Assembly-CSharp
+        m_MethodName: Tick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1063686275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4808,8 +4961,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 857092095}
     - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1862484606}
+    - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Tick
+      objectReference: {fileID: 0}
+    - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AudioGod, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: -211897120926867446, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
       propertyPath: elementSelectionUI
@@ -5134,6 +5303,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1862484606}
+        m_TargetAssemblyTypeName: AudioGod, Assembly-CSharp
+        m_MethodName: Tick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1163484245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5258,6 +5439,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1560964843}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: ShowPauseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1862484606}
+        m_TargetAssemblyTypeName: AudioGod, Assembly-CSharp
+        m_MethodName: Tick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6913,6 +7106,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1862484606}
+        m_TargetAssemblyTypeName: AudioGod, Assembly-CSharp
+        m_MethodName: Tick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1707254264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7109,8 +7314,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 857092095}
     - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1862484606}
+    - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Tick
+      objectReference: {fileID: 0}
+    - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AudioGod, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: -211897120926867446, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
       propertyPath: elementSelectionUI
@@ -7297,7 +7518,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1757937485}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1862484606}
+        m_TargetAssemblyTypeName: AudioGod, Assembly-CSharp
+        m_MethodName: Tick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1757937485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7428,8 +7661,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 857092095}
     - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1862484606}
+    - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Tick
+      objectReference: {fileID: 0}
+    - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AudioGod, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: -211897120926867446, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
       propertyPath: elementSelectionUI
@@ -7606,6 +7855,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1862484606}
+        m_TargetAssemblyTypeName: AudioGod, Assembly-CSharp
+        m_MethodName: Tick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7789,6 +8050,153 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858746534}
   m_CullTransparentMesh: 1
+--- !u!1 &1862484603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1862484604}
+  - component: {fileID: 1862484606}
+  - component: {fileID: 1862484605}
+  m_Layer: 0
+  m_Name: AudioGod
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1862484604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862484603}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 20}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 330585546}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1862484605
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862484603}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.6
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 0
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1862484606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862484603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f2066d6f04374f50bfea8f0e5febb79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioGod
+  snip: {fileID: 8300000, guid: eb6feef2246fd43978d5a626a779d34a, type: 3}
+  snap: {fileID: 8300000, guid: 8bea90266f53a49d1963d229328add8c, type: 3}
+  pop: {fileID: 8300000, guid: e0f593efaaffe4c31b3382c1ab06d8d5, type: 3}
+  boop: {fileID: 8300000, guid: 9592cde42c8bf455c8df48e4e81237e8, type: 3}
+  tick: {fileID: 8300000, guid: 4dddad94ea52643ef885bffd6fb0206f, type: 3}
 --- !u!1 &1908831989
 GameObject:
   m_ObjectHideFlags: 0
@@ -8003,6 +8411,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1862484606}
+        m_TargetAssemblyTypeName: AudioGod, Assembly-CSharp
+        m_MethodName: Tick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1917454962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8119,7 +8539,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Atoma v1.0.2b
+  m_text: 'Atoma v1.0.3b
 
     Executable built exclusively for presentation and submission.'
   m_isRightToLeft: 0
@@ -8636,8 +9056,24 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1862484606}
+    - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Tick
+      objectReference: {fileID: 0}
+    - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AudioGod, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2367007034401286866, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: -211897120926867446, guid: 0266497d8dbaa0c48bafbd105d8a03c0, type: 3}
       propertyPath: elementSelectionUI
