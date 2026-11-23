@@ -8539,7 +8539,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Atoma v1.0.3b
+  m_text: 'Atoma v1.0.4b
 
     Executable built exclusively for presentation and submission.'
   m_isRightToLeft: 0

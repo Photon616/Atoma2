@@ -213,12 +213,15 @@ public class PhysicsManager : MonoBehaviour
     public void ClearSimulation()
     {
         Debug.Log("clearing simulation!");
+        audioGod.SetMute(true);
 
         while (atoms.Count > 0)
         {
             GameObject atom = atoms[0];
             DeleteAtom(atom.GetComponent<AtomManager>().GetID());
         }
+        
+        audioGod.SetMute(false);
     }
 
     private ulong PackIDs(uint id1, uint id2)

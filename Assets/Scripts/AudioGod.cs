@@ -21,6 +21,11 @@ public class AudioGod : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    public void SetMute(bool doMute)
+    {
+        audioSource.enabled = doMute;
+    }
+
     public void Snip()
     {
         audioSource.PlayOneShot(snip);
