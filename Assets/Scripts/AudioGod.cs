@@ -23,7 +23,7 @@ public class AudioGod : MonoBehaviour
 
     public void SetMute(bool doMute)
     {
-        audioSource.enabled = doMute;
+        audioSource.enabled = !doMute;
     }
 
     public void Snip()
