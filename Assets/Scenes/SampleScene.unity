@@ -8539,9 +8539,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Atoma v1.0.4b
+  m_text: 'Atoma v1.0.5b
 
-    Executable built exclusively for presentation and submission.'
+    Executable built exclusively for presentation.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87be6354e549e4a04b46f717da16a963, type: 2}
   m_sharedMaterial: {fileID: -8417872249327759851, guid: 87be6354e549e4a04b46f717da16a963, type: 2}
