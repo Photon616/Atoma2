@@ -63,14 +63,15 @@ public class PhysicsManager : MonoBehaviour
                     force += GetRepelForceByDistance(distance) * repelForce;
                 }
                 
-                if (distance >= minAttractDistance)
+                ulong key = PackIDs(managerA.GetID(), managerB.GetID());
+                bool doesBondExist = bonds.ContainsKey(key);
+                 
+                if (doesBondExist)
                 {
-                    ulong key = PackIDs(managerA.GetID(), managerB.GetID());
-                    bool doesBondExist = bonds.ContainsKey(key);
-                    if (doesBondExist)
+                    bonds[key].GetComponent<BondManager>().UpdatePosition(atomA.transform.position, atomB.transform.position);
+                    if (distance >= minAttractDistance)
                     {
                         force -= GetAttractForceByDistance(distance) * attractForce;
-                        bonds[key].GetComponent<BondManager>().UpdatePosition(atomA.transform.position, atomB.transform.position);
                     }
                 }
                 
